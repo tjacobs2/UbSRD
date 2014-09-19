@@ -6,6 +6,8 @@
         "backbone-amd": null,
         "underscore-amd": null,
         "requirejs": null,
-        "bootstrap": null
+        "requirejs-text": null,
+        "bootstrap": null,
+        "fullpage.js": null
     }
 }

@@ -38,7 +38,8 @@ app.get('/api/structures/:id', function(req, res) {
 });
 
 app.get('/api/groups/:id', function(req, res) {
-  Structures.group_structures(req.params.group_id, function(err, all) {
+  console.log("Getting group!");
+  Structures.group_structures(req.params.id, function(err, all) {
     var structures = all;
     console.log(structures);
     res.json(structures);

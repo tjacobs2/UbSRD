@@ -1,1 +1,41 @@
 @import url('../scripts/vendor/bootstrap/dist/css/bootstrap.css');
+
+body {
+  font-family: 'Georgia';
+  background-color: #eee;
+  color: #444;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.left_panel {
+    width: 20%;
+    float: left;
+    padding-left: 20px;
+    padding-top: 25px;
+}
+
+.right_panel {
+    width: 80%;
+    float: right;
+    padding-right: 20px;
+}
+
+.page {
+  height: 100vh;
+}
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    /*text-align:left;*/
+    /* inline-block space fix */
+    margin-right:-4px;
+}

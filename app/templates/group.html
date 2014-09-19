@@ -1,0 +1,14 @@
+<div class="structure">
+	<table class="table table-hover">
+		<tr>
+			<th>Structure ID</th>
+			<th>Number of residues</th>
+		</tr>
+		<% _.each(structures, function(structure) { %>
+			<tr>
+		    	<td><%= structure.get('struct_id') %></td>
+		    	<td><%= structure.get('total_residue') %></td>
+			</tr>
+	    <% }); %>
+    </table>
+</div>
