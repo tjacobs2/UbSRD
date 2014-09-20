@@ -7,9 +7,9 @@ some D3 plots and browsing an sqlite database containing structural information 
 proteins.
 
 Stuff this applications uses (in no particular order):
--Underscore.js
--Backbone.js
--Require.js
--Bootstrap
--GLMol
--D3.js
+- Underscore.js
+- Backbone.js
+- Require.js
+- Bootstrap
+- GLMol
+- D3.js
