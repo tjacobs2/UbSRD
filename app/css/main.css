@@ -10,23 +10,6 @@ h1, h2 {
   text-align: center;
 }
 
-.left_panel {
-    width: 20%;
-    float: left;
-    padding-left: 20px;
-    padding-top: 25px;
-}
-
-.right_panel {
-    width: 80%;
-    float: right;
-    padding-right: 20px;
-}
-
-.page {
-  height: 100vh;
-}
-
 /* centered columns styles */
 .row-centered {
     text-align:center;
@@ -38,4 +21,48 @@ h1, h2 {
     /*text-align:left;*/
     /* inline-block space fix */
     margin-right:-4px;
+}
+
+/* Navigation bar styles */
+.nav ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.nav li {
+  line-height: 40px;
+  height: 40px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+ 
+.nav a {
+  transition: .3s background-color;
+}
+ 
+.nav a:hover {
+  background-color: #005f5f;
+}
+ 
+.nav a.active {
+  background-color: #fff;
+  color: #444;
+  cursor: default;
+}
+
+@media screen and (min-width: 600px) {
+  .nav li {
+    width: 120px;
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+  }
+ 
+  /* Option 1 - Display Inline */
+  .nav li {
+    display: inline-block;
+    margin-right: -4px;
+  }
 }

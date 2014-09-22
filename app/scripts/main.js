@@ -5,7 +5,18 @@
  		"underscore": "vendor/underscore-amd/underscore",
  		"backbone": "vendor/backbone-amd/backbone",
  		"bootstrap": "vendor/bootstrap/dist/js/bootstrap.js",
- 		"templates": "../templates"
+ 		"templates": "../templates",
+ 		"three": "vendor/glmol/js/Three49Custom",
+ 		"glmol": "vendor/glmol/js/GLmol"
+ 	},
+ 	shim: {
+ 		'three': {
+ 			exports: 'Three'
+ 		},
+ 		'glmol': {
+ 			deps: ['three'],
+ 			exports: "GLmol"
+ 		}
  	}
  });
 
