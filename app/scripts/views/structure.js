@@ -32,7 +32,9 @@ define(['backbone', 'glmol', 'text!templates/structure.html'], function(Backbone
 			};
 
 			//For now, fetch the PDB from source and load it up
-			$.get('http://www.rcsb.org/pdb/files/'+this.model.PDB+'.pdb', function(ret) {			
+			var url = 'http://www.rcsb.org/pdb/files/'+this.model.PDB+'.pdb';
+			console.log('PDB URL: ' + url);
+			$.get(url, function(ret) {			
 				el.find('#glmol_src').val(ret);
 				glmol.loadMolecule();
 			});

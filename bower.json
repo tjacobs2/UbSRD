@@ -1,13 +1,13 @@
 {
-    "name": "Ubsrd",
-    "version": "1.0.0",
-    "dependencies": {
-        "jquery": null,
-        "backbone-amd": null,
-        "underscore-amd": null,
-        "requirejs": null,
-        "requirejs-text": null,
-        "bootstrap": null,
-        "fullpage.js": null
-    }
+  "name": "Ubsrd",
+  "version": "1.0.0",
+  "dependencies": {
+    "jquery": null,
+    "backbone-amd": null,
+    "underscore-amd": null,
+    "requirejs": null,
+    "requirejs-text": null,
+    "bootstrap": null,
+    "d3": "~3.4.11"
+  }
 }

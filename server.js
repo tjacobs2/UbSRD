@@ -46,6 +46,14 @@ app.get('/api/groups/:id', function(req, res) {
   });
 });
 
+app.get('/api/example1', function(req, res) {
+  Structures.example1(function(err, all) {
+    var query_result = all;
+    console.log(query_result);
+    res.json(query_result);
+  });
+});
+
 // application -------------------------------------------------------------
 app.all('*', function(req, res) {
   res.sendfile('./app/index.html');

@@ -5,6 +5,7 @@
  		"underscore": "vendor/underscore-amd/underscore",
  		"backbone": "vendor/backbone-amd/backbone",
  		"bootstrap": "vendor/bootstrap/dist/js/bootstrap.js",
+ 		"d3": "vendor/d3/d3",
  		"templates": "../templates",
  		"three": "vendor/glmol/js/Three49Custom",
  		"glmol": "vendor/glmol/js/GLmol"
@@ -25,10 +26,11 @@
  	'models/structure',
  	'models/structure_collection',
  	'views/home',
+ 	'views/examples',
  	'views/browse',
  	'views/group',
  	'views/structure'
- ], function(Backbone, Structure, StructureCollection, HomeView, BrowseView, GroupView, StructureView) {
+ ], function(Backbone, Structure, StructureCollection, HomeView, ExamplesView, BrowseView, GroupView, StructureView) {
  	var AppRouter = Backbone.Router.extend({
 
 	    routes: {
@@ -45,21 +47,27 @@
 	    },
 
 	    home: function () {
+	    	$('.nav li').removeClass('active');
+	    	$('.nav .home').addClass('active');
 	    	if(!this.homeView) {
 	        	this.homeView = new HomeView({ el: $("#main") });
 	    	}
 	    	this.homeView.render();
 	    },
 
-	    overview: function() {
-	    	console.log("Overview page");
-	    },
-
 	    examples: function() {
-	    	console.log("Example page");
+	    	$('.nav li').removeClass('active');
+	    	$('.nav .examples').addClass('active');
+	    	if(!this.examplesView) {
+	        	this.examplesView = new ExamplesView({ el: $("#main") });
+	    	}
+	    	this.examplesView.render();
 	    },
 
 	    browse: function(group_id, struct_id) {
+	    	$('.nav li').removeClass('active');
+	    	$('.nav .browse').addClass('active');
+
 	    	//If we have a group id and structure id, just go to the structures page for that structure
 	    	if(group_id && struct_id) {
 		    	console.log("Structure page");
