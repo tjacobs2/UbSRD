@@ -10,21 +10,9 @@ h1, h2 {
   text-align: center;
 }
 
-.left_panel {
-    width: 20%;
-    float: left;
-    padding-left: 20px;
-    padding-top: 25px;
-}
-
-.right_panel {
-    width: 80%;
-    float: right;
-    padding-right: 20px;
-}
-
-.page {
-  height: 100vh;
+.nav {
+  width: 50%;
+  margin: 0 auto; /*align the div in the center*/
 }
 
 /* centered columns styles */
@@ -39,3 +27,10 @@ h1, h2 {
     /* inline-block space fix */
     margin-right:-4px;
 }
+
+/* SVG graphics*/
+.bar rect {
+  fill: steelblue;
+  shape-rendering: crispEdges;
+}
+
