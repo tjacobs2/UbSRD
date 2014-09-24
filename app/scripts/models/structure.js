@@ -13,7 +13,10 @@ define(['backbone'], function(Backbone) {
 		defaults: {
 			struct_id: null,
 			PDB: '',
-			total_residue: 0 
+			total_residue: 0,
+			Inter_Type: '',
+    		UBL_TYPE: '',
+    		PDB_INFO: '',
 		},
 	});
 	return Structure;
