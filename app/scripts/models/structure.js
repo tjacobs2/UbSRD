@@ -12,11 +12,10 @@ define(['backbone'], function(Backbone) {
 		// Default attributes ensure that each structure has some basic attributes.
 		defaults: {
 			struct_id: null,
-			PDB: '',
-			total_residue: 0,
-			Inter_Type: '',
-    		UBL_TYPE: '',
-    		PDB_INFO: '',
+			pdb_code: '',
+			inter_type: '',
+    		ubl_type: '',
+    		pdb_info: '',
 		},
 	});
 	return Structure;
