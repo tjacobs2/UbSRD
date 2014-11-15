@@ -1,12 +1,18 @@
 <table class="table table-hover">
 	<tr>
-		<th>Structure ID</th>
+		<th style="display: hidden">PDB code</th>
+		<th>PDB code</th>
 		<th>Number of residues</th>
+		<th>UBL type</th>
+		<th>UBL-interaction type</th>
 	</tr>
 	<% _.each(structures, function(structure) { %>
 		<tr class="structure_row">
-	    	<td><%= structure.get('struct_id') %></td>
+	    	<td style="display: hidden"><%= structure.get('struct_id') %></td>
+	    	<td><%= structure.get('PDB') %></td>
 	    	<td><%= structure.get('total_residue') %></td>
+	    	<td><%= structure.get('UBL_TYPE') %></td>
+	    	<td><%= structure.get('Inter_Type') %></td>
 		</tr>
     <% }); %>
 </table>

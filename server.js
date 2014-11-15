@@ -12,14 +12,14 @@ app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 app.use(logger('dev')) //Log every request
 
 // api used by Angular ---------------------------------------------------------------------
-var Structures = require('./models/structures');
+var db = require('./db');
 
 //todo
 //app.get('/structure/struct_id', function(req, res) {
 //app.get('/residue/struct_id & res_id', function(req, res) {
 
 app.get('/api/structures', function(req, res) {
-  Structures.all_structures(function(err, all) {
+  db.all_structures(function(err, all) {
     var structures = all;
     console.log(structures);
     res.json(structures);
@@ -27,7 +27,7 @@ app.get('/api/structures', function(req, res) {
 });
 
 app.get('/api/structures/:id', function(req, res) {
-  Structures.structure_by_id(req.params.id, function(err, all) {
+  db.structure_by_id(req.params.id, function(err, all) {
     var structure = {};
     if(all.length > 0) {
       structure = all[0]
@@ -39,7 +39,7 @@ app.get('/api/structures/:id', function(req, res) {
 
 app.get('/api/groups/:id', function(req, res) {
   console.log("Getting group!");
-  Structures.group_structures(req.params.id, function(err, all) {
+  db.group_structures(req.params.id, function(err, all) {
     var structures = all;
     console.log(structures);
     res.json(structures);
@@ -47,7 +47,7 @@ app.get('/api/groups/:id', function(req, res) {
 });
 
 app.get('/api/example1', function(req, res) {
-  Structures.example1(function(err, all) {
+  db.example1(function(err, all) {
     var query_result = all;
     console.log(query_result);
     res.json(query_result);

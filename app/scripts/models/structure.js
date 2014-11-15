@@ -9,7 +9,7 @@ define(['backbone'], function(Backbone) {
 
 		idAttribute: "struct_id",
 
-		// Default attributes ensure that each	 todo created has `title` and `completed` keys.
+		// Default attributes ensure that each structure has some basic attributes.
 		defaults: {
 			struct_id: null,
 			PDB: '',
