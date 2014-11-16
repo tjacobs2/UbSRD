@@ -1,4 +1,4 @@
-define(['backbone', 'text!templates/home.html'], function(Backbone, Template) {
+define(['backbone', 'util', 'text!templates/home.html'], function(Backbone, d3, Template) {
 
 	var Home = Backbone.View.extend({
 
@@ -9,7 +9,8 @@ define(['backbone', 'text!templates/home.html'], function(Backbone, Template) {
 
 		render: function(){
 			this.$el.html( this.template() );
-  		}
+ 		}
+
 
 	});
 

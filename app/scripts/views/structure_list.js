@@ -1,4 +1,4 @@
-define(['backbone', 'text!templates/group.html'], function(Backbone, Template) {
+define(['backbone', 'text!templates/structure_list.html'], function(Backbone, Template) {
 
 	var Group = Backbone.View.extend({
 
@@ -13,8 +13,7 @@ define(['backbone', 'text!templates/group.html'], function(Backbone, Template) {
 
 			$('.structure_row').click(function() {
 				var struct_id = $(this).find('td').html();
-				var url = window.location.hash;
-				document.location.href = url + '/' + struct_id;
+				document.location.href = '#view/' + struct_id;
 			});
   		}
 

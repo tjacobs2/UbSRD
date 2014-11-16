@@ -1,13 +1,78 @@
-// define(['backbone'], function(Backbone) {
-// 	activate_navbar = function() {
-// 		$('.nav li').click(function() {
-// 			$('.nav li').removeClass('active');
-// 			$(this).addClass('active');
-// 		})
-// 	}
-// });
+/*
+  d3.phylogram.js
+  Wrapper around a d3-based phylogram (tree where branch lengths are scaled)
+  Also includes a radial dendrogram visualization (branch lengths not scaled)
+  along with some helper methods for building angled-branch trees.
 
-define(['d3'], function (d3) {
+  Copyright (c) 2013, Ken-ichi Ueda
+
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+
+  Redistributions of source code must retain the above copyright notice, this
+  list of conditions and the following disclaimer. Redistributions in binary
+  form must reproduce the above copyright notice, this list of conditions and
+  the following disclaimer in the documentation and/or other materials
+  provided with the distribution.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+  LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  POSSIBILITY OF SUCH DAMAGE.
+
+  DOCUEMENTATION
+
+  d3.phylogram.build(selector, nodes, options)
+    Creates a phylogram.
+    Arguments:
+      selector: selector of an element that will contain the SVG
+      nodes: JS object of nodes
+    Options:
+      width       
+        Width of the vis, will attempt to set a default based on the width of
+        the container.
+      height
+        Height of the vis, will attempt to set a default based on the height
+        of the container.
+      vis
+        Pre-constructed d3 vis.
+      tree
+        Pre-constructed d3 tree layout.
+      children
+        Function for retrieving an array of children given a node. Default is
+        to assume each node has an attribute called "branchset"
+      diagonal
+        Function that creates the d attribute for an svg:path. Defaults to a
+        right-angle diagonal.
+      skipTicks
+        Skip the tick rule.
+      skipBranchLengthScaling
+        Make a dendrogram instead of a phylogram.
+  
+  d3.phylogram.buildRadial(selector, nodes, options)
+    Creates a radial dendrogram.
+    Options: same as build, but without diagonal, skipTicks, and 
+      skipBranchLengthScaling
+  
+  d3.phylogram.rightAngleDiagonal()
+    Similar to d3.diagonal except it create an orthogonal crook instead of a
+    smooth Bezier curve.
+    
+  d3.phylogram.radialRightAngleDiagonal()
+    d3.phylogram.rightAngleDiagonal for radial layouts.
+*/
+
+if (!d3) { throw "d3 wasn't included!"};
+(function() {
   d3.phylogram = {}
   d3.phylogram.rightAngleDiagonal = function() {
     var projection = function(d) { return [d.y, d.x]; }
@@ -97,13 +162,6 @@ define(['d3'], function (d3) {
         .attr("r", 4.5)
         .attr('stroke',  'yellowGreen')
         .attr('fill', 'greenYellow')
-        .attr('stroke-width', '2px');
-
-    vis.selectAll('g.inner.node')
-      .append('svg:circle')
-        .attr("r", 4.5)
-        .attr('fill', 'red')
-        .attr('stroke', '#369')
         .attr('stroke-width', '2px');
     
     vis.selectAll('g.root.node')
@@ -217,14 +275,14 @@ define(['d3'], function (d3) {
     d3.phylogram.styleTreeNodes(vis)
     
     if (!options.skipLabels) {
-      // vis.selectAll('g.inner.node')
-      //   .append("svg:text")
-      //     .attr("dx", -6)
-      //     .attr("dy", -6)
-      //     .attr("text-anchor", 'end')
-      //     .attr('font-size', '8px')
-      //     .attr('fill', '#ccc')
-      //     .text(function(d) { return d.length; });
+      vis.selectAll('g.inner.node')
+        .append("svg:text")
+          .attr("dx", -6)
+          .attr("dy", -6)
+          .attr("text-anchor", 'end')
+          .attr('font-size', '8px')
+          .attr('fill', '#ccc')
+          .text(function(d) { return d.length; });
 
       vis.selectAll('g.leaf.node').append("svg:text")
         .attr("dx", 8)
@@ -233,8 +291,7 @@ define(['d3'], function (d3) {
         .attr('font-family', 'Helvetica Neue, Helvetica, sans-serif')
         .attr('font-size', '10px')
         .attr('fill', 'black')
-        //.text(function(d) { return d.name + ' ('+d.length+')'; });
-        .text(function(d) { return d.name; });
+        .text(function(d) { return d.name + ' ('+d.length+')'; });
     }
     
     return {tree: tree, vis: vis}
@@ -290,5 +347,4 @@ define(['d3'], function (d3) {
     
     return {tree: tree, vis: vis}
   }
-  return d3;
-});
+}());

@@ -13,6 +13,7 @@ h1, h2 {
 .nav {
   width: 50%;
   margin: 0 auto; /*align the div in the center*/
+  padding-bottom: 30px;
 }
 
 /* centered columns styles */

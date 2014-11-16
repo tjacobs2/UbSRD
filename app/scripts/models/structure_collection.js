@@ -8,11 +8,14 @@ define(['backbone', 'models/structure'], function(Backbone, Structure) {
 		model: Structure,
 
 		initialize: function(models, options) {
-    		this.id = options.id;
-    	},
-    	url: function() {
-
-    		return '/api/groups/' + this.id;
+			pdbs = options.pdbs || [];
+			console.log(pdbs);
+			if(pdbs.length > 0) {
+	    		this.url = '/api/pdbs/' + pdbs.join(',');
+			}
+			else if(options.id) {
+    			this.url = '/api/groups/' + options.id;
+			}
     	}
 	});
 	return StructureCollection;

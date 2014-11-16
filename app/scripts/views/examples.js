@@ -13,6 +13,7 @@ define(['backbone', 'd3', 'text!templates/examples.html'], function(Backbone, d3
 
 			//Make a call to the DB here
 			$.getJSON( "api/structures", function( structures ) {
+				console.log(structures);
 				//Render d3 here
 				var width = 500;
 				var height = 500;
@@ -26,6 +27,7 @@ define(['backbone', 'd3', 'text!templates/examples.html'], function(Backbone, d3
 						return structure.total_residue;
 					})
 					(structures);
+				console.log(histogram_data);
 
 				var x = d3.scale.linear()
 					.domain([0, d3.max(histogram_data, function(d) { return d.x + d.dx; })])
@@ -45,7 +47,7 @@ define(['backbone', 'd3', 'text!templates/examples.html'], function(Backbone, d3
 				    .data(histogram_data)
 				  .enter().append("g")
 				    .attr("class", "bar")
-			    	.attr("transform", function(d) { return "translate(" + x(d.x) + "," + y(d.y) + ")"; });
+			    	.attr("transform", function(d) { console.log(d.y); return "translate(" + x(d.x) + "," + y(d.y) + ")"; });
 
 				bar.append("rect")
 				    .attr("class", "bar")
