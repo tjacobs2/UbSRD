@@ -33,9 +33,7 @@
  	'views/home',
  	'views/examples',
  	'views/browse',
- 	'views/interactions',
  	'views/phylogony',
- 	'views/ubls',
  	'views/structure_list',
  	'views/structure',
  	'views/structure_browser'
@@ -46,9 +44,7 @@
  		HomeView,
  		ExamplesView,
  		BrowseView,
- 		InteractionView,
  		PhylogonyView,
- 		UblView,
  		StructureListView,
  		StructureView,
  		StructureBrowserView
@@ -61,12 +57,7 @@
 	        'examples':                       'examples',
 	        'browse':                         'browse',
 	        'browse/phylogony':               'browse_phylogony',
-	        'browse/phylogony/:pdbs':         'browse_phylogony',
 	        'browse/structure':               'browse_structure',
-	        'browse/ubls':                    'browse_ubls',
-	        'browse/ubls/:ubl_id':            'browse_ubls',
-	        'browse/interaction':             'browse_interactions',
-	        'browse/interaction/:interaction_id':        'browse_interactions',
 	        'view/:struct_id': 			      'view'
 	    },
 
@@ -102,7 +93,6 @@
 	    browse_structure: function() {
 	    	$('.nav li').removeClass('active');
 	    	$('.nav .browse').addClass('active');
-	    	//var structure_collection = new StructureCollection([], {interaction_types: ['CJ', 'MU']});
 	    	var structure_collection = new StructureCollection([], {});
 	    	var structureBrowserView = new StructureBrowserView( { el: $("#main"), collection: structure_collection } );
 	    	structureBrowserView.render();
@@ -114,27 +104,9 @@
 	    browse_phylogony: function(pdbs) {
 	    	$('.nav li').removeClass('active');
 	    	$('.nav .browse').addClass('active');
-
-	    	if(pdbs) {
-		    	//Create a new StructureView with the successfully populated structure
-		    	var structure_collection = new StructureCollection([], {pdbs: pdbs.split(',')});
-		    	structure_collection.fetch({
-		    		success: function(model) {
-				    	//Create a new StructureView with the successfully populated structure
-				    	console.log(structure_collection);
-				    	var groupView = new StructureListView( { el: $("#main"), collection: structure_collection.models } );
-				    	groupView.render();
-		    		}
-		    	});
-		    }
-	    	//Otherwise, go to the main browser view
-	    	else {
-	    		console.log("Browse view");
-		    	if(!this.phylogonyView) {
-		        	this.phylogonyView = new PhylogonyView({ el: $("#main") });
-		    	}
-		    	this.phylogonyView.render();
-		    }
+	    	var structure_collection = new StructureCollection([], {});
+        	var phylogonyView = new PhylogonyView({ el: $("#main"), collection: structure_collection });
+	    	phylogonyView.render();
 	    },
 
 	    /*
