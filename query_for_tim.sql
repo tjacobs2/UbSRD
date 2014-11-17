@@ -53,12 +53,12 @@ JOIN residue_pairs rp ON
  AND
 -- protein-protein interaction type
  (uc.inter_type = 'NC' OR uc.inter_type = 'DB' OR uc.inter_type = 'CJ')
- AND
+ --AND
 -- partner residue type
 
 -- (r1.name3 = 'ALA' OR r1.name3 = 'ASP' OR r1.name3 = 'ASN' OR r1.name3 = 'ARG' OR r1.name3 = 'CYS' OR r1.name3 = 'GLN'
 --OR r1.name3 = 'GLU' OR r1.name3 = 'GLY' OR r1.name3 = 'HIS' OR r1.name3 = 'ILE'  OR 
-r1.name3 = 'GLN'
+--r1.name3 = 'GLN'
 --OR r1.name3 = 'LYS' OR r1.name3 = 'MET' OR r1.name3 = 'PHE' OR r1.name3 = 'PRO' OR r1.name3 = 'SER' OR r1.name3 = 'THR'
 --OR r1.name3 = 'TRP' OR r1.name3 = 'TYR' OR r1.name3 = 'VAL')
     AND

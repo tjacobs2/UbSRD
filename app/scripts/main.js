@@ -37,7 +37,8 @@
  	'views/phylogony',
  	'views/ubls',
  	'views/structure_list',
- 	'views/structure'
+ 	'views/structure',
+ 	'views/structure_browser'
  ], function(
  		Backbone,
  		Structure,
@@ -49,7 +50,8 @@
  		PhylogonyView,
  		UblView,
  		StructureListView,
- 		StructureView
+ 		StructureView,
+ 		StructureBrowserView
  ) {
  	var AppRouter = Backbone.Router.extend({
 
@@ -60,6 +62,7 @@
 	        'browse':                         'browse',
 	        'browse/phylogony':               'browse_phylogony',
 	        'browse/phylogony/:pdbs':         'browse_phylogony',
+	        'browse/structure':               'browse_structure',
 	        'browse/ubls':                    'browse_ubls',
 	        'browse/ubls/:ubl_id':            'browse_ubls',
 	        'browse/interaction':             'browse_interactions',
@@ -82,7 +85,7 @@
 
 	    /*
 	    	The main browse page. Decide to browse by phylogeny,
-	    	conjugation type, or UBL type
+	    	structure features, or residue features
 	    */
 	    browse: function() {
 	    	$('.nav li').removeClass('active');
@@ -94,34 +97,16 @@
 	    },
 
 	    /*
-	    	View a list of structures by PDB codes
+	    	browse by structural features (e.g. interaction type, ubl type, etc)
 	    */
-	    browse_ubls: function(ubl_id) {
+	    browse_structure: function() {
 	    	$('.nav li').removeClass('active');
 	    	$('.nav .browse').addClass('active');
-
-	    	if(ubl_id) {
-		    	//Create a new StructureView with the successfully populated structure
-		    	var structure_collection = new StructureCollection([], {ubl_id: ubl_id});
-		    	structure_collection.fetch({
-		    		success: function(model) {
-				    	//Create a new StructureView with the successfully populated structure
-				    	console.log(structure_collection);
-				    	var groupView = new StructureListView( { el: $("#main"), collection: structure_collection.models } );
-				    	groupView.render();
-		    		}
-		    	});
-		    }
-	    	//Otherwise, go to the main browser view
-	    	else {
-	    		console.log("Browse view");
-		    	if(!this.ublsView) {
-		        	this.ublsView = new UblView({ el: $("#main") });
-		    	}
-		    	this.ublsView.render();
-		    }
+	    	//var structure_collection = new StructureCollection([], {interaction_types: ['CJ', 'MU']});
+	    	var structure_collection = new StructureCollection([], {});
+	    	var structureBrowserView = new StructureBrowserView( { el: $("#main"), collection: structure_collection } );
+	    	structureBrowserView.render();
 	    },
-
 
 	    /*
 	    	View a list of structures by PDB codes
@@ -149,35 +134,6 @@
 		        	this.phylogonyView = new PhylogonyView({ el: $("#main") });
 		    	}
 		    	this.phylogonyView.render();
-		    }
-	    },
-
-	    /*
-	    	View a list of structures by conjugation type
-	    */
-	    browse_interactions: function(interaction_id) {
-	    	$('.nav li').removeClass('active');
-	    	$('.nav .browse').addClass('active');
-
-	    	//If we have just have a group id go to the structures list page for that group
-	    	if(interaction_id) {
-		    	var structure_collection = new StructureCollection([], {interaction_id: interaction_id});
-		    	structure_collection.fetch({
-		    		success: function(model) {
-				    	//Create a new StructureView with the successfully populated structure
-				    	console.log(structure_collection);
-				    	var groupView = new StructureListView( { el: $("#main"), collection: structure_collection.models } );
-				    	groupView.render();
-		    		}
-		    	});
-	    	}
-	    	//Otherwise, go to the main browser view
-	    	else {
-	    		console.log("Browse view");
-		    	if(!this.interactionView) {
-		        	this.interactionView = new InteractionView({ el: $("#main") });
-		    	}
-		    	this.interactionView.render();
 		    }
 	    },
 

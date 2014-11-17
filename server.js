@@ -14,17 +14,24 @@ app.use(logger('dev')) //Log every request
 var db = require('./db');
 var newick = require('./newick');
 
-//Retreive all structures
+/*
+  Get structures from the DB. Filter set based on named
+  query parameters
+*/
 app.get('/api/structures', function(req, res) {
-  db.all_structures(function(err, all) {
+  console.log(req.query);
+  db.get_structures(req.query, function(err, all) {
     var structures = all;
-    console.log(structures);
+    //console.log(structures);
     res.json(structures);
   });
 });
 
-//Retreive structures by structure id
-app.get('/api/structures/:id', function(req, res) {
+/*
+  Get a single structure by struct_id
+*/
+app.get('/api/structure/:id', function(req, res) {
+  console.log(req.query);
   db.structure_by_id(req.params.id, function(err, all) {
     var structure = {};
     if(all.length > 0) {
@@ -35,33 +42,33 @@ app.get('/api/structures/:id', function(req, res) {
   });
 });
 
-//Retreive structures by PDB list
-app.get('/api/pdbs/:pdbs', function(req, res) {
-  var pdb_codes = req.params.pdbs.split(',');
-  db.structure_by_pdb_codes(pdb_codes, function(err, all) {
-    var structures = all;
-    console.log(structures);
-    res.json(structures);
-  });
-});
+// //Retreive structures by PDB list
+// app.get('/api/pdbs/:pdbs', function(req, res) {
+//   var pdb_codes = req.params.pdbs.split(',');
+//   db.structure_by_pdb_codes(pdb_codes, function(err, all) {
+//     var structures = all;
+//     console.log(structures);
+//     res.json(structures);
+//   });
+// });
 
-//Retreive structures by ineraction type
-app.get('/api/interactions/:id', function(req, res) {
-  db.structures_by_interaction_type(req.params.id, function(err, all) {
-    var structures = all;
-    console.log(structures);
-    res.json(structures);
-  });
-});
+// //Retreive structures by ineraction type
+// app.get('/api/interactions/:id', function(req, res) {
+//   db.structures_by_interaction_type(req.params.id, function(err, all) {
+//     var structures = all;
+//     console.log(structures);
+//     res.json(structures);
+//   });
+// });
 
-//Retreive structures by ubl type
-app.get('/api/ubls/:id', function(req, res) {
-  db.structures_by_ubl_type(req.params.id, function(err, all) {
-    var structures = all;
-    console.log(structures);
-    res.json(structures);
-  });
-});
+// //Retreive structures by ubl type
+// app.get('/api/ubls/:id', function(req, res) {
+//   db.structures_by_ubl_type(req.params.id, function(err, all) {
+//     var structures = all;
+//     console.log(structures);
+//     res.json(structures);
+//   });
+// });
 
 //Retreive the phylogenetic tree in JSON
 app.get('/api/phylo', function(req, res) {
