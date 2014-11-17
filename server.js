@@ -46,9 +46,17 @@ app.get('/api/pdbs/:pdbs', function(req, res) {
 });
 
 //Retreive structures by ineraction type
-app.get('/api/groups/:id', function(req, res) {
-  console.log("Getting group!");
-  db.group_structures(req.params.id, function(err, all) {
+app.get('/api/interactions/:id', function(req, res) {
+  db.structures_by_interaction_type(req.params.id, function(err, all) {
+    var structures = all;
+    console.log(structures);
+    res.json(structures);
+  });
+});
+
+//Retreive structures by ubl type
+app.get('/api/ubls/:id', function(req, res) {
+  db.structures_by_ubl_type(req.params.id, function(err, all) {
     var structures = all;
     console.log(structures);
     res.json(structures);

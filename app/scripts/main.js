@@ -35,6 +35,7 @@
  	'views/browse',
  	'views/interactions',
  	'views/phylogony',
+ 	'views/ubls',
  	'views/structure_list',
  	'views/structure'
  ], function(
@@ -46,6 +47,7 @@
  		BrowseView,
  		InteractionView,
  		PhylogonyView,
+ 		UblView,
  		StructureListView,
  		StructureView
  ) {
@@ -57,7 +59,9 @@
 	        'examples':                       'examples',
 	        'browse':                         'browse',
 	        'browse/phylogony':               'browse_phylogony',
-	        'browse/phylogony/:pdbs':               'browse_phylogony',
+	        'browse/phylogony/:pdbs':         'browse_phylogony',
+	        'browse/ubls':                    'browse_ubls',
+	        'browse/ubls/:ubl_id':            'browse_ubls',
 	        'browse/interaction':             'browse_interactions',
 	        'browse/interaction/:interaction_id':        'browse_interactions',
 	        'view/:struct_id': 			      'view'
@@ -87,6 +91,35 @@
 	        	this.browseView = new BrowseView({ el: $("#main") });
 	    	}
 	    	this.browseView.render();
+	    },
+
+	    /*
+	    	View a list of structures by PDB codes
+	    */
+	    browse_ubls: function(ubl_id) {
+	    	$('.nav li').removeClass('active');
+	    	$('.nav .browse').addClass('active');
+
+	    	if(ubl_id) {
+		    	//Create a new StructureView with the successfully populated structure
+		    	var structure_collection = new StructureCollection([], {ubl_id: ubl_id});
+		    	structure_collection.fetch({
+		    		success: function(model) {
+				    	//Create a new StructureView with the successfully populated structure
+				    	console.log(structure_collection);
+				    	var groupView = new StructureListView( { el: $("#main"), collection: structure_collection.models } );
+				    	groupView.render();
+		    		}
+		    	});
+		    }
+	    	//Otherwise, go to the main browser view
+	    	else {
+	    		console.log("Browse view");
+		    	if(!this.ublsView) {
+		        	this.ublsView = new UblView({ el: $("#main") });
+		    	}
+		    	this.ublsView.render();
+		    }
 	    },
 
 
@@ -128,7 +161,7 @@
 
 	    	//If we have just have a group id go to the structures list page for that group
 	    	if(interaction_id) {
-		    	var structure_collection = new StructureCollection([], {id: interaction_id});
+		    	var structure_collection = new StructureCollection([], {interaction_id: interaction_id});
 		    	structure_collection.fetch({
 		    		success: function(model) {
 				    	//Create a new StructureView with the successfully populated structure

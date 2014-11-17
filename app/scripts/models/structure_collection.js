@@ -13,8 +13,11 @@ define(['backbone', 'models/structure'], function(Backbone, Structure) {
 			if(pdbs.length > 0) {
 	    		this.url = '/api/pdbs/' + pdbs.join(',');
 			}
-			else if(options.id) {
-    			this.url = '/api/groups/' + options.id;
+			else if(options.interaction_id) {
+    			this.url = '/api/interactions/' + options.interaction_id;
+			}
+			else if(options.ubl_id) {
+    			this.url = '/api/ubls/' + options.ubl_id;
 			}
     	}
 	});

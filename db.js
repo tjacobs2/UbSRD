@@ -10,8 +10,14 @@ exports.all_structures = function(callback) {
 };
 
 exports.structure_by_id = function(struct_id, callback) {
-  db.all('Select * from structures s join interaction_type i on s.struct_id = i.struct_id where s.struct_id = ?;',
-    struct_id,
+  var query = [
+  'SELECT * FROM structures s',
+  'JOIN interaction_type i ON',
+  ' s.struct_id = i.struct_id',
+  'WHERE',
+    's.struct_id = ?'
+  ].join(' ');
+  db.all(query, struct_id,
     function(err, all) {
       if(err)
         console.error(err);
@@ -19,10 +25,31 @@ exports.structure_by_id = function(struct_id, callback) {
   });
 };
 
-exports.group_structures = function(group_id, callback) {
-  console.log("Group id is: " + group_id);
-  db.all('Select * from structures s join interaction_type i on s.struct_id = i.struct_id where i.inter_type = ?',
-    group_id,
+exports.structures_by_interaction_type = function(group_id, callback) {
+  var query = [
+  'SELECT * FROM structures s',
+  'JOIN interaction_type i ON',
+  ' s.struct_id = i.struct_id',
+  'WHERE',
+    'i.inter_type = ?'
+  ].join(' ');
+  db.all(query, group_id,
+    function(err, all) {
+        if(err)
+          console.error(err);
+        callback(err, all);
+      });
+};
+
+exports.structures_by_ubl_type = function(ubl_id, callback) {
+  var query = [
+  'SELECT * FROM structures s',
+  'JOIN interaction_type i ON',
+  ' s.struct_id = i.struct_id',
+  'WHERE',
+    'i.ubl_type = ?'
+  ].join(' ');
+  db.all(query, ubl_id,
     function(err, all) {
         if(err)
           console.error(err);
@@ -31,7 +58,12 @@ exports.group_structures = function(group_id, callback) {
 };
 
 exports.structure_by_pdb_codes = function(pdb_codes, callback) {
-  var query = 'Select * from structures s join interaction_type i on s.struct_id = i.struct_id WHERE';
+  var query = [
+  'SELECT * FROM structures s',
+  'JOIN interaction_type i ON',
+  ' s.struct_id = i.struct_id',
+  'WHERE',
+  ].join(' ');
   for (var i = 0, len = pdb_codes.length; i < len; i++) {
     pdb_code = pdb_codes[i].substring(0,4)
     query += ' i.pdb_code = "' + pdb_code + '" OR';
