@@ -1,0 +1,27 @@
+{
+  "name": "ubsrd",
+  "version": "1.0.0",
+  "description": "Ubiquitin Structural Relationship Database",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.10.2",
+    "fs": "0.0.2",
+    "morgan": "^1.5.0",
+    "sqlite3": "^3.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tjacobs2/ubsrd.git"
+  },
+  "author": "Tim Jacobs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tjacobs2/ubsrd/issues"
+  },
+  "homepage": "https://github.com/tjacobs2/ubsrd"
+}
