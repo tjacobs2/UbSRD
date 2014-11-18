@@ -27,6 +27,11 @@ define(['backbone', 'models/structure_collection', 'text!templates/structure_bro
   		},
 
   		filter_click: function() {
+
+		    $('html, body').animate({
+		        scrollTop: $("#structure_table").offset().top
+		    }, 1000);
+
   			var options = {};
 			options.interaction_types = [];
 			$('#interaction_types :checked').each(function() {

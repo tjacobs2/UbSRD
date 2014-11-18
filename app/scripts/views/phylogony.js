@@ -42,7 +42,6 @@ define(['backbone', 'models/structure_collection', 'text!templates/phylogony.htm
 		       height: 1200
 			});
 			phylogram.vis.selectAll('g.node').on('click', this.node_click);
-			//$('g.node').click(this.node_click);
   		},
 
   		node_click: function(n) {
@@ -54,6 +53,9 @@ define(['backbone', 'models/structure_collection', 'text!templates/phylogony.htm
 			new_structures.fetch({
 				success: this.reset_collection
 			});
+		    $('html, body').animate({
+		        scrollTop: $("#structure_table").offset().top
+		    }, 1000);
   		},
 
 		reset_collection: function(collection, response) {
