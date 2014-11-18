@@ -16,6 +16,10 @@ h1, h2 {
   padding-bottom: 30px;
 }
 
+#structure_table tr td:hover{
+  cursor: pointer;
+}
+
 /* centered columns styles */
 .row-centered {
     text-align:center;

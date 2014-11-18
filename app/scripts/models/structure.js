@@ -5,7 +5,7 @@
 define(['backbone'], function(Backbone) {
 	var Structure = Backbone.Model.extend({
 
-		urlRoot: "/api/structures/",
+		urlRoot: "/api/structure/",
 
 		idAttribute: "struct_id",
 

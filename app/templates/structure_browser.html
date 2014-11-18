@@ -3,21 +3,133 @@
 	the 3D structure of the molecule and view the relevant data in the UbSRD database.
 </p>
 
-<div>
-	<label>Interaction Type</label><br />
-	<div id="interaction_types">
-		<input type="checkbox" value="MU">Mono Ubiquitin<br />
-		<input type="checkbox" value="CJ">Conjugated Ubiqutin<br />
+<form class="form-horizontal">
+	<div class="form-group">
+	    <label for="interaction_type" class="col-sm-2 control-label">Interaction Type:</label>
+    	<div id="interaction_types" class="checkbox">
+    		<div class="col-sm-10">
+    			<label>
+					<input type="checkbox" value="CJ"> Conjugated Ubiquitin
+    			</label>
+			</div>
+    		<div class="col-sm-offset-2 col-sm-10">
+    			<label>
+					<input type="checkbox" value="MU">Mono-ubiquitin
+    			</label>
+			</div>
+    		<div class="col-sm-offset-2 col-sm-10">
+    			<label>
+					<input type="checkbox" value="DB">Deubiquitinase
+    			</label>
+			</div>
+    		<div class="col-sm-offset-2 col-sm-10">
+    			<label>
+					<input type="checkbox" value="NC">Non-covalent
+    			</label>
+    		</div>
+    		<div class="col-sm-offset-2 col-sm-10">
+    			<label>
+					<input type="checkbox" value="UC">Unconjugated
+    			</label>
+			</div>
+    		<div class="col-sm-offset-2 col-sm-10">
+    			<label>
+					<input type="checkbox" value="FU">FU
+    			</label>
+    		</div>
+		</div>
 	</div>
-
-	<label>Ubiquitin Type</label><br />
-	<div id="ubl_types">
-		<input type="checkbox" value="UBQ">Ubiquitin<br />
-		<input type="checkbox" value="SUM_1">SUMO 1<br />
+	<div class="form-group">
+	    <label for="interaction_type" class="col-sm-2 control-label">Ubiquitin Type:</label>
+    	<div id="ubl_types" class="checkbox">
+	    	<div class="col-sm-2">
+	    		<label>
+					<input type="checkbox" value="SUM">SUM
+				</label>
+			</div>
+			<div class="col-sm-2">
+	    		<label>
+					<input type="checkbox" value="SUM_1">SUM_1
+				</label>
+			</div>
+			<div class="col-sm-2">
+				<label>
+					<input type="checkbox" value="SUM_3">SUM_3
+				</label>
+			</div>
+			<div class="col-sm-2">
+				<label>
+					<input type="checkbox" value="SUM_2">SUM_2
+				</label>
+			</div>
+			<div class="col-sm-2">
+				<label>
+					<input type="checkbox" value="UBQ">UBQ
+				</label>
+			</div>
+			<div class="col-sm-offset-2 col-sm-2">
+				<label>
+					<input type="checkbox" value="NED">NED
+				</label>
+			</div>
+			<div class="col-sm-2">
+				<label>
+					<input type="checkbox" value="ELO">ELO
+				</label>
+			</div>
+			<div class="col-sm-2">
+				<label>
+					<input type="checkbox" value="UB5">UB5
+				</label>
+			</div>
+			<div class="col-sm-2">
+				<label>
+					<input type="checkbox" value="UBL">UBL
+				</label>
+			</div>
+			<div class="col-sm-2">
+				<label>
+					<input type="checkbox" value="ATG">ATG
+				</label>
+			</div>
+			<div class="col-sm-offset-2 col-sm-2">
+				<label>
+					<input type="checkbox" value="UB3">UB3
+				</label>
+			</div>
+			<div class="col-sm-2">
+				<label>
+					<input type="checkbox" value="ISG">ISG
+				</label>
+			</div>
+			<div class="col-sm-2">
+				<label>
+					<input type="checkbox" value="UBQ_M">UBQ_M
+				</label>
+			</div>
+			<div class="col-sm-2">
+				<label>
+					<input type="checkbox" value="UBQ_F">UBQ_F
+				</label>
+			</div>
+			<div class="col-sm-2">
+				<label>
+					<input type="checkbox" value="UBL_M">UBL_M
+				</label>
+			</div>
+			<div class="col-sm-offset-2 col-sm-2">
+				<label>
+					<input type="checkbox" value="SUM_F">SUM_F
+				</label>
+			</div>
+    	</div>
 	</div>
-
-	<button id="filter">Filter structure</button>
-</div>
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-4">
+			<button id="filter" class="btn btn-default">Filter structures</button>
+		</div>
+	</div>
+</form>
 
 <div id="structure_list">
 </div>

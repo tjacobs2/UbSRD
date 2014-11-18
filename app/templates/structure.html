@@ -1,8 +1,40 @@
 <h2>Structure Details</h2>
 <div class="row">
 	<div class="col-md-6">
-	    Struct Id: <%= struct_id %>
-	    PDB: <%= pdb_code %>
+
+		<form class="form-horizontal">
+			<div class="form-group">
+				<label class="col-md-3 control-label">Structure ID:</label>
+				<div class="col-md-9">
+					<p class="form-control-static"><%= struct_id %></p>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-3 control-label">PDB Code:</label>
+				<div class="col-md-9">
+					<p class="form-control-static"><%= pdb_code %></p>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-3 control-label">PDB Info:</label>
+				<div class="col-md-9">
+					<p class="form-control-static"><%= pdb_info %></p>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-3 control-label">Ubiquitin interaction type:</label>
+				<div class="col-md-9">
+					<p class="form-control-static"><%= inter_type %></p>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-3 control-label">Ubl type:</label>
+				<div class="col-md-9">
+					<p class="form-control-static"><%= ubl_type %></p>
+				</div>
+			</div>
+		</form>
+
 	</div>
 
 	<div class="col-md-6" id="glmol" style="height: 400px; background-color: black;"></div>

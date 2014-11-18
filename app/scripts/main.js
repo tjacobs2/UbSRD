@@ -113,7 +113,9 @@
 	    	View a single structure
 	    */
 	    view: function(struct_id) {
-	    	console.log("Structure page");
+	    	$('.nav li').removeClass('active');
+	    	$('.nav .browse').addClass('active');
+	    	
 	    	//Create a new structure model object, with the ID from the URL and populate it from the database
 	    	var structure = new Structure({struct_id: struct_id});
 	    	structure.fetch({
