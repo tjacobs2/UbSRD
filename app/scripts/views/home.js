@@ -1,4 +1,4 @@
-define(['backbone', 'util', 'text!templates/home.html'], function(Backbone, d3, Template) {
+define(['backbone', 'util', 'bootstrap', 'text!templates/home.html'], function(Backbone, d3, bootstrap, Template) {
 
 	var Home = Backbone.View.extend({
 

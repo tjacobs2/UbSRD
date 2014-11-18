@@ -16,7 +16,16 @@
     <h2>Ubiquitin Structural Relationship Database</h2>
 	<ul class="nav nav-pills nav-justified">
 		<li class="home active"><a href="#home">Home</a></li>
-		<li class="browse"><a href="#browse">Browse Structures</a></li>
+		<li class="browse dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                Browse UbSRD <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li class="examples"><a href="#browse/phylogony">Browse by phylogony</a></li>
+                <li class="examples"><a href="#browse/structure">Browse by structure properties</a></li>
+                <li class="examples"><a href="#browse/residue">Browse by residue properties</a></li>
+            </ul>
+        </li>
 		<li class="examples"><a href="#examples">Analysis Examples</a></li>
 	</ul>
 	<div id="main" class="container"></div>

@@ -4,7 +4,7 @@
  		"jquery": "vendor/jquery/dist/jquery",
  		"underscore": "vendor/underscore-amd/underscore",
  		"backbone": "vendor/backbone-amd/backbone",
- 		"bootstrap": "vendor/bootstrap/dist/js/bootstrap.js",
+ 		"bootstrap": "vendor/bootstrap/dist/js/bootstrap",
  		"d3": "vendor/d3/d3",
  		"templates": "../templates",
  		"three": "vendor/glmol/js/Three49Custom",
@@ -27,6 +27,8 @@
  });
 
  require([
+ 	'jquery',
+ 	'bootstrap',
  	'backbone',
  	'models/structure',
  	'models/structure_collection',
@@ -38,6 +40,8 @@
  	'views/structure',
  	'views/structure_browser'
  ], function(
+ 		jquery,
+ 		Bootstrap,
  		Backbone,
  		Structure,
  		StructureCollection,

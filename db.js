@@ -74,5 +74,15 @@ exports.structure_by_id = function(struct_id, callback) {
         console.error(err);
       callback(err, all);
   });
+}
+
+exports.example1 = function(callback) {
+  var query = "select i.inter_type as inter_type, count(*) as count from structures s join interaction_type i on s.struct_id = i.struct_id GROUP BY i.inter_type;"; 
+  db.all(query,
+    function(err, all) {
+      if(err)
+        console.error(err);
+      callback(err, all);
+  });
 };
 
