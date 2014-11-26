@@ -15,12 +15,12 @@ define(['backbone', 'models/structure_collection', 'text!templates/structure_bro
 			if(!this.initialized) {
 				this.$el.html( this.template( { structures: this.collection.models } ) );
 				$('#filter').click(this.filter_click);
-				$('.structure_row').click(function() {
-					var struct_id = $(this).find('td').html();
-					document.location.href = '#view/' + struct_id;
-				});
 			}
 			$('#structure_list').html( this.list_template( { structures: this.collection.models } ));
+			$('.structure_row').click(function() {
+				var struct_id = $(this).find('td').html();
+				document.location.href = '#view/' + struct_id;
+			});
 
 			this.initialized = true;	
   		},
