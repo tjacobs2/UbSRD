@@ -6,6 +6,9 @@
  		"underscore": "vendor/underscore-amd/underscore",
  		"backbone": "vendor/backbone-amd/backbone",
  		"d3": "vendor/d3/d3",
+ 		//"ladda": "vendor/ladda-bootstrap/dist/ladda",
+ 		//"spin": "vendor/ladda-bootstrap/dist/spin",
+ 		//"d3": "vendor/ladda-bootstrap/js/ladda",
  		"templates": "../templates",
  		"three": "vendor/glmol/js/Three49Custom",
  		"glmol": "vendor/glmol/js/GLmol",
@@ -25,7 +28,14 @@
  		'phylogram': {
  			deps: ['d3'],
  			exports: 'd3'
- 		}
+ 		},
+ 		"spin": {
+            exports: "Spinner"
+        },
+        "ladda": {
+            depends: "spin",
+            exports: "Ladda"
+        },
  	}
  });
 
@@ -35,26 +45,28 @@
  	'backbone',
  	'models/structure',
  	'models/structure_collection',
+ 	'models/residue_interactions',
  	'views/home',
  	'views/examples',
- 	'views/browse',
  	'views/phylogony',
  	'views/structure_list',
  	'views/structure',
- 	'views/structure_browser'
+ 	'views/structure_browser',
+ 	'views/residue_interaction_browser'
  ], function(
  		jquery,
  		Bootstrap,
  		Backbone,
  		Structure,
  		StructureCollection,
+ 		ResidueInteractions,
  		HomeView,
  		ExamplesView,
- 		BrowseView,
  		PhylogonyView,
  		StructureListView,
  		StructureView,
- 		StructureBrowserView
+ 		StructureBrowserView,
+ 		InteractionsBrowserView
  ) {
  	var AppRouter = Backbone.Router.extend({
 
@@ -65,6 +77,7 @@
 	        'browse':                         'browse',
 	        'browse/phylogony':               'browse_phylogony',
 	        'browse/structure':               'browse_structure',
+	        'browse/interactions':            'browse_interactions',
 	        'view/:struct_id': 			      'view'
 	    },
 
@@ -92,6 +105,22 @@
 	        	this.browseView = new BrowseView({ el: $("#main") });
 	    	}
 	    	this.browseView.render();
+	    },
+	    /*
+	    	browse by structural features (e.g. interaction type, ubl type, etc)
+	    */
+	    browse_interactions: function() {
+	    	$('.nav li').removeClass('active');
+	    	$('.nav .browse').addClass('active');
+	    	var residue_interactions = new ResidueInteractions([], {});
+	    	residue_interactions.fetch({
+	    		success: function(model) {
+	    			console.log(residue_interactions);
+	    			var interactionsBrowserView = new InteractionsBrowserView( { el: $("#main"), collection: residue_interactions } );
+	    			interactionsBrowserView.render();
+	    		}
+	    	});
+
 	    },
 
 	    /*

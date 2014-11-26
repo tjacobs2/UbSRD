@@ -42,6 +42,17 @@ app.get('/api/structure/:id', function(req, res) {
   });
 });
 
+/*
+  Get a ubq residue pair interactions
+*/
+app.get('/api/residue_interactions', function(req, res) {
+  console.log(req.query);
+  db.ubq_type_interactions(req.query, function(err, all) {
+    console.log(all.length);
+    res.json(all);
+  });
+});
+
 
 /*
   Retreive the phylogenetic tree in JSON
@@ -51,9 +62,11 @@ app.get('/api/phylo', function(req, res) {
   res.json(newick.parse(newick_data));
 });
 
-//Download the entire database
+/*
+  Download the entire database
+*/
 app.get('/api/download', function(req, res) {
-  res.sendFile('/092014_UBSRD.db3');
+  res.download(__dirname + '/092014_UBSRD.db3'); 
 });
 
 app.get('/api/example1', function(req, res) {
@@ -68,7 +81,7 @@ app.get('/api/example1', function(req, res) {
   The application!
 */
 app.all('*', function(req, res) {
-  res.sendfile('./app/index.html');
+  res.sendFile(__dirname + '/app/index.html');
 });
 
 app.listen(3000)

@@ -1,4 +1,12 @@
-define(['backbone', 'models/structure_collection', 'text!templates/structure_browser.html', 'text!templates/structure_list.html'], function(Backbone, StructureCollection, Template, ListTemplate) {
+define([
+	'bootstrap',
+	'backbone',
+	'ladda',
+	'spin',
+	'models/structure_collection',
+	'text!templates/structure_browser.html',
+	'text!templates/structure_list.html'
+], function(Bootstrap, Backbone, Ladda, Spin, StructureCollection, Template, ListTemplate) {
 
 	var StructureBrowser = Backbone.View.extend({
 
@@ -27,11 +35,14 @@ define(['backbone', 'models/structure_collection', 'text!templates/structure_bro
 
   		filter_click: function() {
 
-  			console.log(this.initialized);
-
 		    // $('html, body').animate({
 		    //     scrollTop: $("#structure_table").offset().top
 		    // }, 1000);
+		 	//console.log(this);
+		 	//var foo = $('#filter');
+		 	//console.log(foo);
+		    //var l = Ladda.create(foo);
+		 	//l.start();
 
   			var options = {};
 			options.interaction_types = [];
