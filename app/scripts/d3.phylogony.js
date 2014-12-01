@@ -1,12 +1,3 @@
-// define(['backbone'], function(Backbone) {
-// 	activate_navbar = function() {
-// 		$('.nav li').click(function() {
-// 			$('.nav li').removeClass('active');
-// 			$(this).addClass('active');
-// 		})
-// 	}
-// });
-
 define(['d3'], function (d3) {
   d3.phylogram = {}
   d3.phylogram.rightAngleDiagonal = function() {

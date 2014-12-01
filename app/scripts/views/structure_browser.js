@@ -1,4 +1,9 @@
-define(['backbone', 'models/structure_collection', 'text!templates/structure_browser.html', 'text!templates/structure_list.html'], function(Backbone, StructureCollection, Template, ListTemplate) {
+define([
+		'backbone',
+		'models/structure_collection',
+		'text!templates/structure_browser.html',
+		'text!templates/structure_list.html'
+		], function(Backbone, StructureCollection, Template, ListTemplate) {
 
 	var StructureBrowser = Backbone.View.extend({
 
@@ -7,31 +12,35 @@ define(['backbone', 'models/structure_collection', 'text!templates/structure_bro
 		initialized: false,
 
 		initialize: function() {
-			this.listenTo(this.collection, 'reset', this.render);
+			this.listenTo(this.collection, 'reset', this.update_table);
 			_.bindAll(this, 'filter_click', 'reset_collection');
+			console.log("Structure view init");
 		},
 
-		render: function(){
-			if(!this.initialized) {
-				this.$el.html( this.template( { structures: this.collection.models } ) );
-				$('#filter').click(this.filter_click);
-			}
-			$('#structure_list').html( this.list_template( { structures: this.collection.models } ));
-			$('.structure_row').click(function() {
-				var struct_id = $(this).find('td').html();
-				document.location.href = '#view/' + struct_id;
-			});
+  		events: {
+   			'click #filter' : 'filter_click',
+   			'click .structure_row' : 'row_click'
+  		},
 
-			this.initialized = true;	
+		render: function(){
+			this.$el.html( this.template( { structures: this.collection.models } ) );
+  		},
+
+  		update_table: function() {
+			$('#structure_list').html( this.list_template( { structures: this.collection.models } ));
+		    $('html, body').animate({
+		        scrollTop: $("#structure_table").offset().top
+		    }, 1000);
+  		},
+
+  		row_click: function(ev) {
+			var struct_id = $(ev.currentTarget).find('td').html();
+			document.location.href = '#view/' + struct_id;
   		},
 
   		filter_click: function() {
 
-  			console.log(this.initialized);
-
-		    // $('html, body').animate({
-		    //     scrollTop: $("#structure_table").offset().top
-		    // }, 1000);
+  			console.log("CLICKY");
 
   			var options = {};
 			options.interaction_types = [];

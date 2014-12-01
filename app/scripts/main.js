@@ -9,7 +9,7 @@
  		"templates": "../templates",
  		"three": "vendor/glmol/js/Three49Custom",
  		"glmol": "vendor/glmol/js/GLmol",
- 		"util": "util"
+ 		"phylogram": "d3.phylogony"
  	},
  	shim: {
         "jquery.bootstrap": {
