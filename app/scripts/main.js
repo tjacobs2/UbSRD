@@ -9,22 +9,21 @@
  		"templates": "../templates",
  		"three": "vendor/glmol/js/Three49Custom",
  		"glmol": "vendor/glmol/js/GLmol",
- 		"phylogram": "d3.phylogony"
+ 		"phylogram": "d3.phylogram"
  	},
  	shim: {
         "jquery.bootstrap": {
             deps: ["jquery"]
         },
  		'three': {
- 			exports: 'Three'
+ 			exports: 'THREE'
  		},
  		'glmol': {
  			deps: ['three'],
  			exports: 'GLmol'
  		},
- 		'phylogram': {
- 			deps: ['d3'],
- 			exports: 'd3'
+ 		'd3.phylogram': {
+ 			deps: ['d3']
  		}
  	}
  });

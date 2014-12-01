@@ -1,6 +1,6 @@
 define([
 		'backbone',
-		'phylogram',
+		'd3.phylogram',
 		'models/structure_collection',
 		'text!templates/phylogony.html',
 		'text!templates/structure_list.html'
