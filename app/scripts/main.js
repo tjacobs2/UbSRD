@@ -7,7 +7,7 @@
  		"backbone": "vendor/backbone-amd/backbone",
  		"d3": "vendor/d3/d3",
  		"templates": "../templates",
- 		"three": "vendor/glmol/js/Three49Custom",
+ 		"three": "vendor/glmol/js/Three49custom",
  		"glmol": "vendor/glmol/js/GLmol",
  		"phylogram": "d3.phylogram"
  	},
