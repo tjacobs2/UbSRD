@@ -10,32 +10,31 @@
  		//"spin": "vendor/ladda-bootstrap/dist/spin",
  		//"d3": "vendor/ladda-bootstrap/js/ladda",
  		"templates": "../templates",
- 		"three": "vendor/glmol/js/Three49Custom",
+ 		"three": "vendor/glmol/js/Three49custom",
  		"glmol": "vendor/glmol/js/GLmol",
- 		"util": "util"
+ 		"phylogram": "d3.phylogram"
  	},
  	shim: {
         "jquery.bootstrap": {
             deps: ["jquery"]
         },
  		'three': {
- 			exports: 'Three'
+ 			exports: 'THREE'
  		},
  		'glmol': {
  			deps: ['three'],
  			exports: 'GLmol'
  		},
- 		'phylogram': {
- 			deps: ['d3'],
- 			exports: 'd3'
- 		},
- 		"spin": {
-            exports: "Spinner"
-        },
-        "ladda": {
-            depends: "spin",
-            exports: "Ladda"
-        },
+ 		//"spin": {
+        //    exports: "Spinner"
+        //},
+        //"ladda": {
+        //    depends: "spin",
+        //    exports: "Ladda"
+        //},
+ 		'd3.phylogram': {
+ 			deps: ['d3']
+ 		}
  	}
  });
 

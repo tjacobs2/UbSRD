@@ -84,4 +84,4 @@ app.all('*', function(req, res) {
   res.sendFile(__dirname + '/app/index.html');
 });
 
-app.listen(3000)
+app.listen(8000)
