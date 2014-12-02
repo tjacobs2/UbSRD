@@ -139,6 +139,9 @@
 			<th>PDB Information</th>
 			<th>Ubuiquitin interface type</th>
 			<th>Ubuiquitin molecule type</th>
+			<th>Residue number 1</th>
+			<th>Residue number 2</th>
+			<th>Distance (Angstroms)</th>
 		</tr>
 		<% _.each(structures, function(structure) { %>
 			<tr class="structure_row">
@@ -147,6 +150,9 @@
  		    	<td><%= structure.get('pdb_info') %></td>
 		    	<td><%= structure.get('inter_type') %></td>
 		    	<td><%= structure.get('ubl_type') %></td>
+		    	<td><%= structure.get('resNum1') %></td>
+		    	<td><%= structure.get('resNum2') %></td>
+		    	<td><%= structure.get('actcoord_dist') %></td>
 			</tr>
 	    <% }); %>
 	</table>
