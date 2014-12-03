@@ -1,13 +1,13 @@
 define([
 	'backbone',
-	'text!templates/structure_list.html'
+	'text!templates/interaction_list.html'
 	],
 	function(
 		Backbone,
 		Template
 	) {
 
-	var StructureListView = Backbone.View.extend({
+	var InteractionListView = Backbone.View.extend({
 
 		template: _.template(Template),
 
@@ -30,5 +30,5 @@ define([
 
 	});
 
-	return StructureListView;
+	return InteractionListView;
 });

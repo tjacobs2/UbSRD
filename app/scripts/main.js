@@ -38,34 +38,31 @@
  	}
  });
 
+
  require([
  	'jquery',
  	'jquery.bootstrap',
  	'backbone',
+ 	'views/app',
  	'models/structure',
- 	'models/structure_collection',
- 	'models/residue_interactions',
  	'views/home',
  	'views/examples',
- 	'views/phylogony',
- 	'views/structure_list',
- 	'views/structure',
+ 	'views/phylogony_browser',
  	'views/structure_browser',
- 	'views/residue_interaction_browser'
+ 	'views/interaction_browser',
+ 	'views/structure'
  ], function(
  		jquery,
  		Bootstrap,
  		Backbone,
+ 		AppView,
  		Structure,
- 		StructureCollection,
- 		ResidueInteractions,
  		HomeView,
  		ExamplesView,
- 		PhylogonyView,
- 		StructureListView,
- 		StructureView,
+ 		PhylogonyBrowserView,
  		StructureBrowserView,
- 		InteractionsBrowserView
+ 		InteractionsBrowserView,
+ 		StructureView
  ) {
  	var AppRouter = Backbone.Router.extend({
 
@@ -82,44 +79,26 @@
 
 	    initialize: function () {
 			console.log('Router initialize');
+			this.appView = new AppView();
 	    },
 
 	    home: function () {
 	    	$('.nav li').removeClass('active');
 	    	$('.nav .home').addClass('active');
 	    	if(!this.homeView) {
-	        	this.homeView = new HomeView({ el: $("#main") });
+	        	this.homeView = new HomeView();
 	    	}
-	    	this.homeView.render();
+	    	this.appView.showView(this.homeView);
 	    },
 
 	    /*
-	    	The main browse page. Decide to browse by phylogeny,
-	    	structure features, or residue features
-	    */
-	    browse: function() {
-	    	$('.nav li').removeClass('active');
-	    	$('.nav .browse').addClass('active');
-	    	if(!this.browseView) {
-	        	this.browseView = new BrowseView({ el: $("#main") });
-	    	}
-	    	this.browseView.render();
-	    },
-	    /*
-	    	browse by structural features (e.g. interaction type, ubl type, etc)
+	    	browse by interactions with UBQ residues
 	    */
 	    browse_interactions: function() {
 	    	$('.nav li').removeClass('active');
 	    	$('.nav .browse').addClass('active');
-	    	var residue_interactions = new ResidueInteractions([], {});
-	    	residue_interactions.fetch({
-	    		success: function(model) {
-	    			console.log(residue_interactions);
-	    			var interactionsBrowserView = new InteractionsBrowserView( { el: $("#main"), collection: residue_interactions } );
-	    			interactionsBrowserView.render();
-	    		}
-	    	});
-
+   			var interactionsBrowserView = new InteractionsBrowserView();
+	    	this.appView.showView(interactionsBrowserView);
 	    },
 
 	    /*
@@ -128,9 +107,8 @@
 	    browse_structure: function() {
 	    	$('.nav li').removeClass('active');
 	    	$('.nav .browse').addClass('active');
-	    	var structure_collection = new StructureCollection([], {});
-	    	var structureBrowserView = new StructureBrowserView( { el: $("#main"), collection: structure_collection } );
-	    	structureBrowserView.render();
+	    	var structureBrowserView = new StructureBrowserView();
+	    	this.appView.showView(structureBrowserView);
 	    },
 
 	    /*
@@ -139,9 +117,8 @@
 	    browse_phylogony: function(pdbs) {
 	    	$('.nav li').removeClass('active');
 	    	$('.nav .browse').addClass('active');
-	    	var structure_collection = new StructureCollection([], {});
-        	var phylogonyView = new PhylogonyView({ el: $("#main"), collection: structure_collection });
-	    	phylogonyView.render();
+        	var phylogonyView = new PhylogonyBrowserView();
+	    	this.appView.showView(phylogonyView);
 	    },
 
 	    /*
@@ -156,8 +133,8 @@
 	    	structure.fetch({
 	    		success: function(model) {
 			    	//Create a new StructureView with the successfully populated structure
-			    	var structureView = new StructureView( { el: $("#main"), model: structure.attributes } );
-			    	structureView.render();
+			    	var structureView = new StructureView( { model: structure.attributes } );
+			    	this.appView.showView(structureView);
 	    		}
 	    	});
 	    },
@@ -169,9 +146,9 @@
 	    	$('.nav li').removeClass('active');
 	    	$('.nav .examples').addClass('active');
 	    	if(!this.examplesView) {
-	        	this.examplesView = new ExamplesView({ el: $("#main") });
+	        	this.examplesView = new ExamplesView();
 	    	}
-	    	this.examplesView.render();
+	    	this.appView.showView(this.examplesView);
 	    },
 
 	});

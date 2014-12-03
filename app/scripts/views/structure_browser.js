@@ -1,51 +1,34 @@
 define([
-		'backbone',
-		'models/structure_collection',
-		'text!templates/structure_browser.html',
-		'text!templates/structure_list.html'
-	], function(Backbone, StructureCollection, Template, ListTemplate) {
+	'backbone',
+	'text!templates/structure_browser.html',
+	'models/structure_collection',
+	'views/structure_list'
+], function(
+	Backbone,
+	Template,
+	StructureCollection,
+	StructureListView
+){
 
 	var StructureBrowser = Backbone.View.extend({
 
 		template: _.template(Template),
-		list_template: _.template(ListTemplate),
-		initialized: false,
 
 		initialize: function() {
-			this.listenTo(this.collection, 'reset', this.update_table);
-			_.bindAll(this, 'filter_click', 'reset_collection');
-			console.log("Structure view init");
+			_.bindAll(this, 'filter_structures', 'update_table');
+			var structures = new StructureCollection([], {});
+			this.list_view = new StructureListView({ collection: structures });
 		},
 
   		events: {
-   			'click #filter' : 'filter_click',
-   			'click .structure_row' : 'row_click'
+   			'click #filter' : 'filter_structures',
   		},
 
 		render: function(){
-			this.$el.html( this.template( { structures: this.collection.models } ) );
+			this.$el.html( this.template() );
   		},
 
-  		update_table: function() {
-			$('#structure_list').html( this.list_template( { structures: this.collection.models } ));
-		    $('html, body').animate({
-		        scrollTop: $("#structure_table").offset().top
-		    }, 1000);
-  		},
-
-  		row_click: function(ev) {
-			var struct_id = $(ev.currentTarget).find('td').html();
-			document.location.href = '#view/' + struct_id;
-  		},
-
-  		filter_click: function() {
-
-		 	//console.log(this);
-		 	//var foo = $('#filter');
-		 	//console.log(foo);
-		    //var l = Ladda.create(foo);
-		 	//l.start();
-
+  		filter_structures: function() {
   			var options = {};
 			options.interaction_types = [];
 			$('#interaction_types :checked').each(function() {
@@ -57,15 +40,19 @@ define([
        			options.ubl_types.push($(this).val());
      		});
 
-	    	var new_structures = new StructureCollection([], options);
-			new_structures.fetch({
-				success: this.reset_collection
+	    	var structures = new StructureCollection([], options);
+			structures.fetch({
+				success: this.update_table
 			});
   		},
 
-		reset_collection: function(collection, response) {
-			this.collection.reset(collection.models);
-		}
+  		update_table: function(collection, response) {
+			this.list_view.collection.reset(collection.models)
+			$('#structure_list').html( this.list_view.el );
+		    $('html, body').animate({
+		        scrollTop: $("#structure_list").offset().top
+		    }, 1000);
+  		}
 
 	});
 

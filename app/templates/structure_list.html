@@ -2,13 +2,16 @@
 Found <%= structures.length %> total structures. 
 </p>
 <table id="structure_table" class="table table-hover">
-	<tr>
-		<th style="display: hidden">Structure ID</th>
-		<th>PDB Code</th>
-		<th>PDB Information</th>
-		<th>Ubuiquitin interface type</th>
-		<th>Ubuiquitin molecule type</th>
-	</tr>
+	<thead>
+		<tr>
+			<th style="display: hidden">Structure ID</th>
+			<th>PDB Code</th>
+			<th>PDB Information</th>
+			<th>Ubuiquitin interface type</th>
+			<th>Ubuiquitin molecule type</th>
+		</tr>
+	</thead>
+	<tbody>
 	<% _.each(structures, function(structure) { %>
 		<tr class="structure_row">
 	    	<td style="display: hidden"><%= structure.get('struct_id') %></td>
@@ -18,4 +21,5 @@ Found <%= structures.length %> total structures.
 	    	<td><%= structure.get('ubl_type') %></td>
 		</tr>
     <% }); %>
+    </tbody>
 </table>

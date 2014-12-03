@@ -50,7 +50,6 @@ exports.get_structures = function(options, callback) {
 
   //Join it all together
   query = query.join(' ');
-
   console.log(query);
   db.all(query,
     function(err, all) {
@@ -137,10 +136,20 @@ exports.ubq_type_interactions = function(options, callback) {
 " (r2.name3 = 'ALA' OR r2.name3 = 'ASP' OR r2.name3 = 'ASN' OR r2.name3 = 'ARG' OR r2.name3 = 'CYS' OR r2.name3 = 'GLN'",
 " OR r2.name3 = 'GLU' OR r2.name3 = 'GLY' OR r2.name3 = 'HIS' OR r2.name3 = 'ILE'  OR r2.name3 = 'LEU'",
 " OR r2.name3 = 'LYS' OR r2.name3 = 'MET' OR r2.name3 = 'PHE' OR r2.name3 = 'PRO' OR r2.name3 = 'SER' OR r2.name3 = 'THR'",
-" OR r2.name3 = 'TRP' OR r2.name3 = 'TYR' OR r2.name3 = 'VAL')",
-" AND",
- "un.real = '70'"
-  ].join(' ');
+" OR r2.name3 = 'TRP' OR r2.name3 = 'TYR' OR r2.name3 = 'VAL')"
+  ];
+
+  if(options.ubq_nums) {
+    query.push(' AND ');
+    for (var i = 0, len = options.ubq_nums.length; i < len; i++) {
+      var num = options.ubq_nums[i];
+      query.push('un.real = '+ num);
+      query.push(' OR ');
+    }
+    query.pop();
+  }
+
+  query = query.join(' ');
   console.log(query);
   db.all(query,
     function(err, all) {
