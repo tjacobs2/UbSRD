@@ -44,7 +44,6 @@
  	'jquery.bootstrap',
  	'backbone',
  	'views/app',
- 	'models/structure',
  	'views/home',
  	'views/examples',
  	'views/phylogony_browser',
@@ -56,7 +55,6 @@
  		Bootstrap,
  		Backbone,
  		AppView,
- 		Structure,
  		HomeView,
  		ExamplesView,
  		PhylogonyBrowserView,
@@ -129,14 +127,8 @@
 	    	$('.nav .browse').addClass('active');
 	    	
 	    	//Create a new structure model object, with the ID from the URL and populate it from the database
-	    	var structure = new Structure({struct_id: struct_id});
-	    	structure.fetch({
-	    		success: function(model) {
-			    	//Create a new StructureView with the successfully populated structure
-			    	var structureView = new StructureView( { model: structure.attributes } );
-			    	this.appView.showView(structureView);
-	    		}
-	    	});
+	    	var structureView = new StructureView({struct_id: struct_id});
+	    	this.appView.showView(structureView);
 	    },
 
 	    /*

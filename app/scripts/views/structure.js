@@ -1,16 +1,37 @@
-define(['backbone', 'glmol', 'text!templates/structure.html'], function(Backbone, GLmol, Template) {
-
-	var Structure = Backbone.View.extend({
+define([
+	'backbone',
+	'glmol',
+	'text!templates/structure.html',
+	'models/structure'
+], function(
+	Backbone,
+	GLmol,
+	Template,
+	Structure
+) {
+	var StructureView = Backbone.View.extend({
 
 		template: _.template(Template),
 
-		initialize: function() {},
+		initialize: function(options) {
+			console.log('initializing');
+			this.struct_id = options.struct_id;
+			_.bindAll(this, 'show_structure');
+		},
 
 		render: function(){
-			var el = this.$el;
+			console.log('rendering');
+	    	var structure = new Structure({struct_id: this.struct_id});
+	    	structure.fetch({
+	    		success: this.show_structure
+	    	});
+	    },
 
+	    show_structure: function(structure) {
 			//Render the template
-			el.html( this.template( this.model ) );
+			//el.html( this.template( this.model ) );
+			//this.$el.html( this.template( model ) );
+			this.$el.html( this.template( structure.attributes ) );
 
 			//Initialize glmol. This should belong in the initailize function, but GLMol requires the DOM elements
 			//to exist prior to initializing the instance
@@ -32,15 +53,16 @@ define(['backbone', 'glmol', 'text!templates/structure.html'], function(Backbone
 			};
 
 			//For now, fetch the PDB from source and load it up
-			var url = 'http://www.rcsb.org/pdb/files/'+this.model.pdb_code+'.pdb';
+			var url = 'http://www.rcsb.org/pdb/files/'+structure.attributes.pdb_code+'.pdb';
 			console.log('PDB URL: ' + url);
 			$.get(url, function(ret) {			
-				el.find('#glmol_src').val(ret);
+				//$('#glmol_src').html(ret);
+				$('#glmol_src').val(ret);
 				glmol.loadMolecule();
 			});
   		}
 
 	});
 
-	return Structure;
+	return StructureView;
 });

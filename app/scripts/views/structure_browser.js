@@ -20,6 +20,11 @@ define([
 			this.list_view = new StructureListView({ collection: structures });
 		},
 
+		onClose: function() {
+			this.list_view.remove();
+			this.list_view.unbind();
+		},
+
   		events: {
    			'click #filter' : 'filter_structures',
   		},

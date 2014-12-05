@@ -37,6 +37,11 @@ define([
 			this.list_view = new StructureListView({ collection: structures });
 		},
 
+		onClose: function() {
+			this.list_view.remove();
+			this.list_view.unbind();
+		},
+
 		// events: {
 		// 	// 'click g.node' : 'node_click',
   //  			'click .structure_row' : 'row_click'

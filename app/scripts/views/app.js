@@ -5,6 +5,9 @@ define([], function() {
 			if (this.currentView){
 				this.currentView.remove();
 				this.currentView.unbind();
+				if (this.currentView.onClose){
+					this.currentView.onClose();
+				}
 			}
 
 			this.currentView = view;

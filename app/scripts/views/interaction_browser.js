@@ -22,6 +22,11 @@ define([
 			_.bindAll(this, 'filter_interactions', 'update_table');
 		},
 
+		onClose: function() {
+			this.list_view.remove();
+			this.list_view.unbind();
+		},
+
   		events: {
    			'click #filter' : 'filter_interactions',
   		},
