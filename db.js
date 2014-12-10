@@ -80,17 +80,20 @@ exports.structure_by_id = function(struct_id, callback) {
 */
 exports.ubq_type_interactions = function(options, callback) {
   var query = [
-"SELECT *",
-// "SELECT ",
-// "it.pdb_code AS pdb, uc.chain_id AS ubq_chain,",
-// "rpi1.pdb_residue_number AS tar_res, rpi1.chain_id AS tar_chain, r1.name3 AS tar_name3, ",
-// "un.real AS ubq_res, ",
-// "rpi2.chain_id AS ubq_chain, r2.name3 AS ubq_name3,",
-// "rp.actcoord_dist AS distance,",
-// "sss.dssp AS partner_dssp,",
-// "it.ubl_type AS ubl_type, ",
-// "uc.inter_type AS inter_type",
-// "",
+"SELECT ",
+"    uc.struct_id as struct_id, ",
+"    uc.inter_type AS inter_type, ",
+"    it.ubl_type AS ubl_type, ",
+"    it.pdb_code AS pdb_code,",
+"    uc.chain_id AS ubq_chain, ",
+"    rpi1.pdb_residue_number AS partner_res, ",
+"    rpi1.chain_id AS partner_chain, ",
+"    r1.name3 AS partner_name3, ",
+"    un.real AS ubq_res, ",
+"    rpi2.chain_id AS ubq_chain, ",
+"    r2.name3 AS ubq_name3, ",
+"    rp.actcoord_dist AS distance, ",
+"    sss.dssp AS partner_dssp ",
 "FROM ubq_chains uc ",
 "",
 "JOIN residue_pdb_identification rpi1 ON",
@@ -140,13 +143,14 @@ exports.ubq_type_interactions = function(options, callback) {
   ];
 
   if(options.ubq_nums) {
-    query.push(' AND ');
+    query.push(' AND (');
     for (var i = 0, len = options.ubq_nums.length; i < len; i++) {
       var num = options.ubq_nums[i];
       query.push('un.real = '+ num);
       query.push(' OR ');
     }
     query.pop();
+    query.push(')');
   }
 
   query = query.join(' ');

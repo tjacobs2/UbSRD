@@ -3,27 +3,37 @@ Found <%= structures.length %> total structures.
 </p>
 <table id="structure_table" class="table table-hover">
 	<tr>
+		<th>ID</th>
 		<th style="display: hidden">Structure ID</th>
 		<th>PDB Code</th>
 		<th>PDB Information</th>
 		<th>Ubuiquitin interface type</th>
 		<th>Ubuiquitin molecule type</th>
-		<th>Residue number 1</th>
-		<th>Residue number 2</th>
-		<th>UBQ number</th>
+		<th>Ubiquitin chain</th>
+		<th>Ubiquitin residue</th>
+		<th>Ubiquitin amino acid</th>
+		<th>Interaction partner chain</th>
+		<th>Interaction partner residue</th>
+		<th>Interaction partner amino acid</th>
+		<th>Interaction partner secondary structure</th>
 		<th>Distance (Angstroms)</th>
 	</tr>
 	<% _.each(structures, function(structure) { %>
 		<tr class="structure_row">
+			<th><<%= structure.get('cid') %>/th>
 	    	<td style="display: hidden"><%= structure.get('struct_id') %></td>
 	    	<td><%= structure.get('pdb_code') %></td>
-		    	<td><%= structure.get('pdb_info') %></td>
+		    <td><%= structure.get('pdb_info') %></td>
 	    	<td><%= structure.get('inter_type') %></td>
 	    	<td><%= structure.get('ubl_type') %></td>
-	    	<td><%= structure.get('resNum1') %></td>
-	    	<td><%= structure.get('resNum2') %></td>
-	    	<td><%= structure.get('real') %></td>
-	    	<td><%= structure.get('actcoord_dist') %></td>
+	    	<td><%= structure.get('ubq_chain') %></td>
+	    	<td><%= structure.get('ubq_res') %></td>
+	    	<td><%= structure.get('ubq_name3') %></td>
+	    	<td><%= structure.get('partner_chain') %></td>
+	    	<td><%= structure.get('partner_res') %></td>
+	    	<td><%= structure.get('partner_name3') %></td>
+	    	<td><%= structure.get('partner_dssp') %></td>
+	    	<td><%= structure.get('distance') %></td>
 		</tr>
     <% }); %>
 </table>

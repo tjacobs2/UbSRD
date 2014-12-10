@@ -37,8 +37,8 @@ define([
 
   		filter_interactions: function() {
   			var options = {};
-			options.ubq_nums = [];
-			options.ubq_nums.push($('#ubq_resnums').val());
+			options.ubq_nums = this.parse_residue_numbers($('#ubq_resnums').val());
+			console.log(options.ubq_nums);
 	    	var new_interactions = new ResidueInteractions([], options);
 			new_interactions.fetch({
 				success: this.update_table
@@ -51,6 +51,28 @@ define([
 		    $('html, body').animate({
 		        scrollTop: $("#structure_list").offset().top
 		    }, 1000);
+		},
+
+		parse_residue_numbers: function(values) {
+			var ubq_nums = [];
+			var tokens = values.split(',');
+			_.each(tokens, function(token) {
+				token = token.trim();
+				console.log(token.length);
+				if(token.length == 1) {
+					ubq_nums.push(token);
+				}
+				else {
+					var first = token.split('-')[0];
+					var last = token.split('-')[1];
+					console.log(first);
+					console.log(last);
+					for (i = first; i <= last; ++i) {
+						ubq_nums.push(i);
+					}
+				}
+			});
+			return ubq_nums;
 		}
 
 	});
