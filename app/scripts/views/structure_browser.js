@@ -15,6 +15,7 @@ define([
 		template: _.template(Template),
 
 		initialize: function() {
+			console.log("Structure browser init");
 			_.bindAll(this, 'filter_structures', 'update_table');
 			var structures = new StructureCollection([], {});
 			this.list_view = new StructureListView({ collection: structures });
@@ -31,6 +32,8 @@ define([
 
 		render: function(){
 			this.$el.html( this.template() );
+			this.list_view.$el = this.$('#structure_list');
+			this.list_view.render();
   		},
 
   		filter_structures: function() {
@@ -53,7 +56,8 @@ define([
 
   		update_table: function(collection, response) {
 			this.list_view.collection.reset(collection.models)
-			$('#structure_list').html( this.list_view.el );
+			this.list_view.delegateEvents();
+			//$('#structure_list').html( this.list_view.el );
 		    $('html, body').animate({
 		        scrollTop: $("#structure_list").offset().top
 		    }, 1000);
