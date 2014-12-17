@@ -1,6 +1,26 @@
 var sqlite = require('sqlite3');
 var db = new sqlite.Database('092014_UBSRD.db3');
 
+exports.get_interaction_types = function(callback) {
+  var query = "SELECT * FROM ppl_id"
+  db.all(query,
+    function(err, all) {
+      if(err)
+        console.error(err);
+      callback(err, all);
+  });
+};
+
+exports.get_ubq_types = function(callback) {
+  var query = "SELECT * FROM ubl_id"
+  db.all(query,
+    function(err, all) {
+      if(err)
+        console.error(err);
+      callback(err, all);
+  });
+};
+
 exports.get_structures = function(options, callback) {
   var query = [
   'SELECT * FROM structures s',

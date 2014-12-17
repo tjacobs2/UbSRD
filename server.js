@@ -53,6 +53,28 @@ app.get('/api/residue_interactions', function(req, res) {
   });
 });
 
+/*
+  Get the set of interaction types
+*/
+app.get('/api/interaction_types', function(req, res) {
+  console.log(req.query);
+  db.get_interaction_types(function(err, all) {
+    console.log(all.length);
+    res.json(all);
+  });
+});
+
+/*
+  Get the set of ubq types
+*/
+app.get('/api/ubq_types', function(req, res) {
+  console.log(req.query);
+  db.get_ubq_types(function(err, all) {
+    console.log(all.length);
+    res.json(all);
+  });
+});
+
 
 /*
   Retreive the phylogenetic tree in JSON

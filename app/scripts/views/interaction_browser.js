@@ -2,7 +2,7 @@
 define([
 		'backbone',
 		'text!templates/interaction_browser.html',
-		'models/residue_interactions',
+		'models/interactions',
 		'views/interaction_list'
 	],
 	function(

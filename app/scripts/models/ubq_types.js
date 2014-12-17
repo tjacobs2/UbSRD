@@ -3,15 +3,14 @@
 // Our basic structure model
 
 define(['backbone', 'models/structure'], function(Backbone, Structure) {
-	var ResidueInteractions = Backbone.Collection.extend({
+	var UbqTypes = Backbone.Collection.extend({
 
 		//model: Structure,
 
 		initialize: function(models, options) {
-	   		this.url = '/api/residue_interactions?';
-	   		this.url += $.param(options); 
+	   		this.url = '/api/ubq_types';
  			console.log(this.url);
     	}
 	});
-	return ResidueInteractions;
+	return UbqTypes;
 });
