@@ -76,7 +76,6 @@ define([
   		update_table: function(collection, response) {
 			this.list_view.collection.reset(collection.models)
 			this.list_view.delegateEvents();
-			//$('#structure_list').html( this.list_view.el );
 		    $('html, body').animate({
 		        scrollTop: $("#structure_list").offset().top
 		    }, 1000);

@@ -33,6 +33,8 @@ define([
 
 		render: function(){
 			this.$el.html( this.template() );
+			this.list_view.$el = this.$('#structure_list');
+			this.list_view.render();
   		},
 
   		filter_interactions: function() {
@@ -47,7 +49,7 @@ define([
 
 		update_table: function(collection, response) {
 			this.list_view.collection.reset(collection.models)
-			$('#structure_list').html( this.list_view.el );
+			this.list_view.delegateEvents();
 		    $('html, body').animate({
 		        scrollTop: $("#structure_list").offset().top
 		    }, 1000);
