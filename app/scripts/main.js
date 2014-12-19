@@ -6,9 +6,8 @@
  		"underscore": "vendor/underscore-amd/underscore",
  		"backbone": "vendor/backbone-amd/backbone",
  		"d3": "vendor/d3/d3",
- 		//"ladda": "vendor/ladda-bootstrap/dist/ladda",
- 		//"spin": "vendor/ladda-bootstrap/dist/spin",
- 		//"d3": "vendor/ladda-bootstrap/js/ladda",
+ 		"ladda": "vendor/ladda-bootstrap/dist/ladda",
+ 		"spin": "vendor/ladda-bootstrap/dist/spin",
  		"templates": "../templates",
  		"three": "vendor/glmol/js/Three49custom",
  		"glmol": "vendor/glmol/js/GLmol",
@@ -25,13 +24,13 @@
  			deps: ['three'],
  			exports: 'GLmol'
  		},
- 		//"spin": {
-        //    exports: "Spinner"
-        //},
-        //"ladda": {
-        //    depends: "spin",
-        //    exports: "Ladda"
-        //},
+ 		"spin": {
+           exports: "Spinner"
+        },
+        "ladda": {
+           depends: "spin",
+           exports: "Ladda"
+        },
  		'd3.phylogram': {
  			deps: ['d3']
  		}

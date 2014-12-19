@@ -3,13 +3,15 @@ define([
 		'backbone',
 		'text!templates/interaction_browser.html',
 		'models/interactions',
-		'views/interaction_list'
+		'views/interaction_list',
+		'ladda'
 	],
 	function(
 		Backbone,
 		Template,
 		ResidueInteractions,
-		InteractionListView
+		InteractionListView,
+		Ladda
 	){
 
 	var InteractionsBrowserView = Backbone.View.extend({
@@ -19,7 +21,8 @@ define([
 		initialize: function() {
 			var interactions = new ResidueInteractions([], {});
 			this.list_view = new InteractionListView({ collection: interactions });
-			_.bindAll(this, 'filter_interactions', 'update_table');
+			_.bindAll(this, 'filter_interactions', 'update_table', 'render');
+			console.log(Ladda);
 		},
 
 		onClose: function() {
@@ -38,6 +41,10 @@ define([
   		},
 
   		filter_interactions: function() {
+			var button = $('#filter')[0];
+  			this.spinner = Ladda.create(button);
+  			this.spinner.start();
+
   			var options = {};
 			options.ubq_nums = this.parse_residue_numbers($('#ubq_resnums').val());
 			console.log(options.ubq_nums);
@@ -50,6 +57,7 @@ define([
 		update_table: function(collection, response) {
 			this.list_view.collection.reset(collection.models)
 			this.list_view.delegateEvents();
+  			this.spinner.stop();
 		    $('html, body').animate({
 		        scrollTop: $("#structure_list").offset().top
 		    }, 1000);

@@ -4,14 +4,16 @@ define([
 	'models/structure_collection',
 	'models/interaction_types',
 	'models/ubq_types',
-	'views/structure_list'
+	'views/structure_list',
+	'ladda'
 ], function(
 	Backbone,
 	Template,
 	StructureCollection,
 	InteractionTypes,
 	UblTypes,
-	StructureListView
+	StructureListView,
+	Ladda
 ){
 
 	var StructureBrowser = Backbone.View.extend({
@@ -56,6 +58,10 @@ define([
   		},
 
   		filter_structures: function() {
+			var button = $('#filter')[0];
+  			this.spinner = Ladda.create(button);
+  			this.spinner.start();
+
   			var options = {};
 			options.interaction_types = [];
 			$('#interaction_types :checked').each(function() {
@@ -76,6 +82,7 @@ define([
   		update_table: function(collection, response) {
 			this.list_view.collection.reset(collection.models)
 			this.list_view.delegateEvents();
+  			this.spinner.stop();
 		    $('html, body').animate({
 		        scrollTop: $("#structure_list").offset().top
 		    }, 1000);
