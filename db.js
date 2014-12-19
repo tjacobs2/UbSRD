@@ -1,8 +1,8 @@
 var sqlite = require('sqlite3');
-var db = new sqlite.Database('092014_UBSRD.db3');
+var db = new sqlite.Database('092014_UBSRD_final.db3');
 
 exports.get_interaction_types = function(callback) {
-  var query = "SELECT * FROM ppl_id"
+  var query = "SELECT * FROM ppi_id"
   db.all(query,
     function(err, all) {
       if(err)
@@ -38,7 +38,7 @@ exports.get_structures = function(options, callback) {
     query.push('(');
     for (var i = 0, len = options.interaction_types.length; i < len; i++) {
       var inter_type = options.interaction_types[i];
-      query.push('i.inter_type = "' + inter_type + '"');
+      query.push('i.ppi_id = ' + inter_type);
       query.push('OR');
     }
     query.pop();
@@ -52,7 +52,7 @@ exports.get_structures = function(options, callback) {
     query.push('(');
     for (var i = 0, len = options.ubl_types.length; i < len; i++) {
       var ubl_type = options.ubl_types[i];
-      query.push('i.ubl_type = "' + ubl_type + '"');
+      query.push('i.ubl_id = ' + ubl_type);
       query.push('OR');
     }
     query.pop();

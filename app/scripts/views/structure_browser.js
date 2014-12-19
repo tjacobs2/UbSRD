@@ -3,12 +3,14 @@ define([
 	'text!templates/structure_browser.html',
 	'models/structure_collection',
 	'models/interaction_types',
+	'models/ubq_types',
 	'views/structure_list'
 ], function(
 	Backbone,
 	Template,
 	StructureCollection,
 	InteractionTypes,
+	UblTypes,
 	StructureListView
 ){
 
@@ -18,14 +20,17 @@ define([
 
 		initialize: function() {
 			console.log("Structure browser init");
-			_.bindAll(this, 'filter_structures', 'update_table');
+			_.bindAll(this, 'filter_structures', 'update_table', 'render');
 
 			this.interaction_types = new InteractionTypes([], {});
-			//var self = this;
 			this.interaction_types.fetch({
 				success: this.render
 			});
-			console.log(this.interaction_types.models);
+
+			this.ubl_types = new UblTypes([], {});
+			this.ubl_types.fetch({
+				success: this.render
+			});
 
 			var structures = new StructureCollection([], {});
 			this.list_view = new StructureListView({ collection: structures });
@@ -41,8 +46,10 @@ define([
   		},
 
 		render: function(){
+			console.log(this.ubl_types.models);
 			this.$el.html( this.template({
-				interaction_types: this.interaction_types.models
+				interaction_types: this.interaction_types.models,
+				ubl_types: this.ubl_types.models
 			}) );
 			this.list_view.$el = this.$('#structure_list');
 			this.list_view.render();
