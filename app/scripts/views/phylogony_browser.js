@@ -49,7 +49,7 @@ define([
 
 		render: function(){
 			this.$el.html( this.template() );
-			$.get('/api/phylo', this.build_phylogram);
+			$.get('/ubsrd/api/phylo', this.build_phylogram);
   		},
 
   		build_phylogram: function(tree_data) {

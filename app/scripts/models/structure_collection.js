@@ -8,7 +8,7 @@ define(['backbone', 'models/structure'], function(Backbone, Structure) {
 		model: Structure,
 
 		initialize: function(models, options) {
-	   		this.url = '/api/structures?';
+	   		this.url = '/ubsrd/api/structures?';
 	   		this.url += $.param(options); 
  			console.log(this.url);
     	}

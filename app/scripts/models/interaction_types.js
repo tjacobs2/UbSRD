@@ -6,7 +6,7 @@ define(['backbone'], function(Backbone) {
 	var InteractionTypes = Backbone.Collection.extend({
 
 		initialize: function(models, options) {
-	   		this.url = '/api/interaction_types';
+	   		this.url = '/ubsrd/api/interaction_types';
     	}
 	});
 	return InteractionTypes;

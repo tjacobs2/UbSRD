@@ -12,7 +12,7 @@ define(['backbone', 'd3', 'text!templates/examples.html'], function(Backbone, d3
 			el.html( this.template() );
 
 			//Make a call to the DB here
-			$.getJSON( "api/example1", function( data ) {
+			$.getJSON( "/ubsrd/api/example1", function( data ) {
 				console.log(data);
 			    var margin = {top: 20, right: 20, bottom: 70, left: 40},
 			    	width = 600 - margin.left - margin.right,
