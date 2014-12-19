@@ -68,8 +68,7 @@ define([
 			var tokens = values.split(',');
 			_.each(tokens, function(token) {
 				token = token.trim();
-				console.log(token.length);
-				if(token.length == 1) {
+				if(token.indexOf('-') == -1) {
 					ubq_nums.push(token);
 				}
 				else {
