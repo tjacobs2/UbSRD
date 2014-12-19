@@ -71,7 +71,7 @@
 	        'browse/phylogony':               'browse_phylogony',
 	        'browse/structure':               'browse_structure',
 	        'browse/interactions':            'browse_interactions',
-	        'view/:struct_id': 			      'view'
+	        'view/?:params':	              'view'
 	    },
 
 	    initialize: function () {
@@ -123,12 +123,23 @@
 	    /*
 	    	View a single structure
 	    */
-	    view: function(struct_id) {
+	    view: function(params) {
 	    	$('.nav li').removeClass('active');
 	    	$('.nav .browse').addClass('active');
+
+	    	query = {}
+	    	$.each(params.split('&'), function(index, value){
+		        if(value){
+		            var param = value.split('=');
+		            query[param[0]] = param[1];
+		        }
+		    });
+		    console.log(params);
+		    console.log(query);
 	    	
 	    	//Create a new structure model object, with the ID from the URL and populate it from the database
-	    	var structureView = new StructureView({struct_id: struct_id});
+	    	var structureView = new StructureView(query 
+	    	);
 	    	this.appView.showView(structureView);
 	    },
 

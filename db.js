@@ -80,6 +80,7 @@ exports.get_structures = function(options, callback) {
 };
 
 exports.structure_by_id = function(struct_id, callback) {
+  console.log(struct_id);
   var query = [
   'SELECT * FROM structures s',
   'JOIN interaction_type i ON',

@@ -33,7 +33,9 @@ define([
 			console.log(structure.attributes.ubq_res);		
 			console.log(structure.attributes.partner_chain);		
 			console.log(structure.attributes.partner_res);		
-			document.location.href = '#view/' + struct_id;
+			url = '#view/?';
+	   		url += $.param(structure.attributes); 
+	   		document.location.href = url;
   		}
 
 	});

@@ -25,8 +25,10 @@ define([
 
   		select_structure: function(ev){
   			console.log('CLICK');
-			var struct_id = $(ev.currentTarget).find('td').html();
-			document.location.href = '#view/' + struct_id;
+			var params = { struct_id: $(ev.currentTarget).find('td').html() }
+			url = '#view/?';
+	   		url += $.param(params); 
+	   		document.location.href = url;
   		}
 
 	});
