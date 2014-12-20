@@ -45,7 +45,7 @@
  	'views/app',
  	'views/home',
  	'views/examples',
- 	'views/phylogony_browser',
+ 	'views/phylogeny_browser',
  	'views/structure_browser',
  	'views/interaction_browser',
  	'views/structure'
@@ -56,7 +56,7 @@
  		AppView,
  		HomeView,
  		ExamplesView,
- 		PhylogonyBrowserView,
+ 		phylogenyBrowserView,
  		StructureBrowserView,
  		InteractionsBrowserView,
  		StructureView
@@ -68,7 +68,7 @@
 	        'home':                           'home',
 	        'examples':                       'examples',
 	        'browse':                         'browse',
-	        'browse/phylogony':               'browse_phylogony',
+	        'browse/phylogeny':               'browse_phylogeny',
 	        'browse/structure':               'browse_structure',
 	        'browse/interactions':            'browse_interactions',
 	        'view/?:params':	              'view'
@@ -113,11 +113,11 @@
 	    /*
 	    	View a list of structures by PDB codes
 	    */
-	    browse_phylogony: function(pdbs) {
+	    browse_phylogeny: function(pdbs) {
 	    	$('.nav li').removeClass('active');
 	    	$('.nav .browse').addClass('active');
-        	var phylogonyView = new PhylogonyBrowserView();
-	    	this.appView.showView(phylogonyView);
+        	var phylogenyView = new phylogenyBrowserView();
+	    	this.appView.showView(phylogenyView);
 	    },
 
 	    /*

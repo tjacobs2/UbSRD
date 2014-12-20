@@ -1,7 +1,7 @@
 define([
 	'backbone',
 	'd3.phylogram',
-	'text!templates/phylogony.html',
+	'text!templates/phylogeny.html',
 	'models/structure_collection',
 	'views/structure_list'
 ], function(
@@ -27,7 +27,7 @@ define([
 		return leaves;
 	};
 
-	var Phylogony = Backbone.View.extend({
+	var phylogeny = Backbone.View.extend({
 
 		template: _.template(Template),
 
@@ -84,5 +84,5 @@ define([
 
 	});
 
-	return Phylogony;
+	return phylogeny;
 });
