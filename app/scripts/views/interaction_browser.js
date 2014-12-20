@@ -22,7 +22,6 @@ define([
 			var interactions = new ResidueInteractions([], {});
 			this.list_view = new InteractionListView({ collection: interactions });
 			_.bindAll(this, 'filter_interactions', 'update_table', 'render');
-			console.log(Ladda);
 		},
 
 		onClose: function() {
@@ -31,7 +30,7 @@ define([
 		},
 
   		events: {
-   			'click #filter' : 'filter_interactions',
+   			'click #filter' : 'filter_interactions'
   		},
 
 		render: function(){

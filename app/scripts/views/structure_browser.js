@@ -21,21 +21,15 @@ define([
 		template: _.template(Template),
 
 		initialize: function() {
-			console.log("Structure browser init");
-			_.bindAll(this, 'filter_structures', 'update_table', 'render');
-
-			this.interaction_types = new InteractionTypes([], {});
-			this.interaction_types.fetch({
-				success: this.render
-			});
-
-			this.ubl_types = new UblTypes([], {});
-			this.ubl_types.fetch({
-				success: this.render
-			});
-
 			var structures = new StructureCollection([], {});
 			this.list_view = new StructureListView({ collection: structures });
+
+			this.interaction_types = new InteractionTypes([], {});
+			this.interaction_types.fetch({async:false});
+
+			this.ubl_types = new UblTypes([], {});
+			this.ubl_types.fetch({async:false});
+			_.bindAll(this, 'filter_structures', 'update_table', 'render');
 		},
 
 		onClose: function() {
@@ -44,7 +38,7 @@ define([
 		},
 
   		events: {
-   			'click #filter' : 'filter_structures',
+   			'click #filter' : 'filter_structures'
   		},
 
 		render: function(){

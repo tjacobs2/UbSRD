@@ -104,10 +104,8 @@
 	    browse_structure: function() {
 	    	$('.nav li').removeClass('active');
 	    	$('.nav .browse').addClass('active');
-	    	if(!this.structureBrowserView) {
-	    		this.structureBrowserView = new StructureBrowserView();
-	    	}
-	    	this.appView.showView(this.structureBrowserView);
+	    	var structureBrowserView = new StructureBrowserView();
+	    	this.appView.showView(structureBrowserView);
 	    },
 
 	    /*
