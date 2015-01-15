@@ -50,6 +50,8 @@ define([
 		render: function(){
 			this.$el.html( this.template() );
 			$.get('/ubsrd/api/phylo', this.build_phylogram);
+			this.list_view.$el = this.$('#structure_list');
+			this.list_view.render();
   		},
 
   		build_phylogram: function(tree_data) {
@@ -76,7 +78,7 @@ define([
 
   		update_table: function(collection, response) {
 			this.list_view.collection.reset(collection.models)
-			$('#structure_list').html( this.list_view.el );
+			this.list_view.delegateEvents();
 		    $('html, body').animate({
 		        scrollTop: $("#structure_list").offset().top
 		    }, 1000);
