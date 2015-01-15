@@ -46,8 +46,10 @@ define([
 
   			var options = {};
 			options.ubq_nums = this.parse_residue_numbers($('#ubq_resnums').val());
+			options.ubl_type = $('input[name=ubl_type]:checked').val()
 			console.log(options.ubq_nums);
-	    	var new_interactions = new ResidueInteractions([], options);
+	    	console.log(options.ubl_type);
+			var new_interactions = new ResidueInteractions([], options);
 			new_interactions.fetch({
 				success: this.update_table
 			});
@@ -61,6 +63,7 @@ define([
 		        scrollTop: $("#structure_list").offset().top
 		    }, 1000);
 		},
+
 
 		parse_residue_numbers: function(values) {
 			var ubq_nums = [];
