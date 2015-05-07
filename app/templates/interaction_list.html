@@ -17,6 +17,8 @@ Found <%= structures.length %> total interactions.
 		<th>Interaction partner amino acid</th>
 		<th>Interaction partner secondary structure</th>
 		<th>Distance (Angstroms)</th>
+		<th>CJ type </th>
+		<th>DB type </th>
 	</tr>
 	<% _.each(structures, function(structure) { %>
 		<tr class="structure_row">
@@ -34,6 +36,9 @@ Found <%= structures.length %> total interactions.
 	    	<td><%= structure.get('partner_name3') %></td>
 	    	<td><%= structure.get('partner_dssp') %></td>
 	    	<td><%= structure.get('distance') %></td>
+	    	<td><%= structure.get('cj_tar') %></td>
+	    	<td><%= structure.get('db_tar') %></td>
+		
 		</tr>
     <% }); %>
 </table>
