@@ -232,7 +232,7 @@ else if (options.ubl_type == 2) {
 "JOIN residue_pdb_identification rpi2 ON",
 "    uc.struct_id = rpi2.struct_id AND",
 "    rpi2.sumo_chain_id = uc.chain_id AND",
-"    rpi2.sumo_chain_id > 0",
+"    rpi2.sumo_chain_id != '' ",
 "",
 "JOIN residues r2 ON",
 "    r2.struct_id = uc.struct_id AND",
