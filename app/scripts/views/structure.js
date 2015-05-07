@@ -31,6 +31,7 @@ define([
 			//Render the template
 			//el.html( this.template( this.model ) );
 			//this.$el.html( this.template( model ) );
+			console.log(structure);
 			this.$el.html( this.template( structure.attributes ) );
 
 			//Initialize glmol. This should belong in the initailize function, but GLMol requires the DOM elements
