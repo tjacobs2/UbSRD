@@ -7,9 +7,9 @@ var express = require('express')
 
 
 var app = express();
-app.use(express.static(__dirname + '/app')) //set static file location as the public directory
+app.use(express.static(__dirname + '/app')); //set static file location as the public directory
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
-app.use(logger('dev')) //Log every request
+app.use(logger('dev')); //Log every request
 
 var db = require('./db');
 var newick = require('./newick');
@@ -18,7 +18,7 @@ var newick = require('./newick');
   Get structures from the DB. Filter set based on named
   query parameters
 */
-app.get('/api/structures', function(req, res) {
+app.get('(/ubsrd)/api/structures', function(req, res) {
   console.log(req.query);
   db.get_structures(req.query, function(err, all) {
     var structures = all;
@@ -30,7 +30,7 @@ app.get('/api/structures', function(req, res) {
 /*
   Get a single structure by struct_id
 */
-app.get('/api/structure/:id', function(req, res) {
+app.get('(/ubsrd)/api/structure/:id', function(req, res) {
   console.log(req.query);
   db.structure_by_id(req.params.id, function(err, all) {
     var structure = {};
@@ -45,7 +45,7 @@ app.get('/api/structure/:id', function(req, res) {
 /*
   Get a ubq residue pair interactions
 */
-app.get('/api/residue_interactions', function(req, res) {
+app.get('(/ubsrd)/api/residue_interactions', function(req, res) {
   console.log(req.query);
   db.ubq_type_interactions(req.query, function(err, all) {
     console.log(all.length);
@@ -56,7 +56,7 @@ app.get('/api/residue_interactions', function(req, res) {
 /*
   Get the set of interaction types
 */
-app.get('/api/interaction_types', function(req, res) {
+app.get('(/ubsrd)/api/interaction_types', function(req, res) {
   console.log(req.query);
   db.get_interaction_types(function(err, all) {
     console.log(all.length);
@@ -67,7 +67,7 @@ app.get('/api/interaction_types', function(req, res) {
 /*
   Get the set of ubq types
 */
-app.get('/api/ubq_types', function(req, res) {
+app.get('(/ubsrd)/api/ubq_types', function(req, res) {
   console.log(req.query);
   db.get_ubq_types(function(err, all) {
     console.log(all.length);
@@ -79,7 +79,7 @@ app.get('/api/ubq_types', function(req, res) {
 /*
   Retreive the phylogenetic tree in JSON
 */
-app.get('/api/phylo', function(req, res) {
+app.get('(/ubsrd)/api/phylo', function(req, res) {
   var newick_data = fs.readFileSync('phylo_tree.newick', encoding='utf8');
   res.json(newick.parse(newick_data));
 });
@@ -87,11 +87,11 @@ app.get('/api/phylo', function(req, res) {
 /*
   Download the entire database
 */
-app.get('/api/download', function(req, res) {
+app.get('(/ubsrd)/api/download', function(req, res) {
   res.download(__dirname + '/092014_UBSRD_final.db3'); 
 });
 
-app.get('/api/example1', function(req, res) {
+app.get('(/ubsrd)/api/example1', function(req, res) {
   db.example1(function(err, all) {
     var query_result = all;
     console.log(query_result);
