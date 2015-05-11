@@ -119,7 +119,8 @@ if (options.ubl_type == 1) {
 "    rp.actcoord_dist AS distance, ",
 "    sss.dssp AS partner_dssp, ",
 "    cjt.target_type AS cj_tar, ", 
-"	 dbt.dub_class AS db_class, dbt.dub AS db_tar",
+"	 dbt.dub_class AS db_class, ",
+"	 dbt.dub AS db_tar",
 "FROM ubq_chains uc ",
 "",
 "JOIN residue_pdb_identification rpi1 ON",
@@ -133,7 +134,7 @@ if (options.ubl_type == 1) {
 "JOIN residue_pdb_identification rpi2 ON",
 "    uc.struct_id = rpi2.struct_id AND",
 "    rpi2.ubq_chain_id = uc.chain_id AND",
-"    rpi2.ubq_chain_id > 0",
+"    rpi2.ubq_chain_id != '' ",
 "",
 "JOIN residues r2 ON",
 "    r2.struct_id = uc.struct_id AND",
@@ -174,7 +175,7 @@ if (options.ubl_type == 1) {
 " (r2.name3 = 'ALA' OR r2.name3 = 'ASP' OR r2.name3 = 'ASN' OR r2.name3 = 'ARG' OR r2.name3 = 'CYS' OR r2.name3 = 'GLN'",
 " OR r2.name3 = 'GLU' OR r2.name3 = 'GLY' OR r2.name3 = 'HIS' OR r2.name3 = 'ILE'  OR r2.name3 = 'LEU'",
 " OR r2.name3 = 'LYS' OR r2.name3 = 'MET' OR r2.name3 = 'PHE' OR r2.name3 = 'PRO' OR r2.name3 = 'SER' OR r2.name3 = 'THR'",
-" OR r2.name3 = 'TRP' OR r2.name3 = 'TYR' OR r2.name3 = 'VAL')"
+" OR r2.name3 = 'TRP' OR r2.name3 = 'TYR' OR r2.name3 = 'VAL') "
   ];
 
   if(options.ubq_nums) {
@@ -216,7 +217,8 @@ else if (options.ubl_type == 2) {
 "    rp.actcoord_dist AS distance, ",
 "    sss.dssp AS partner_dssp, ",
 "    cjt.target_type AS cj_tar, ", 
-"	 dbt.dub_class AS db_class, dbt.dub AS db_tar",
+"	 dbt.dub_class AS db_class, ",
+"    dbt.dub AS db_tar",
 "FROM sumo_chains uc ",
 "",
 "JOIN residue_pdb_identification rpi1 ON",
@@ -230,7 +232,7 @@ else if (options.ubl_type == 2) {
 "JOIN residue_pdb_identification rpi2 ON",
 "    uc.struct_id = rpi2.struct_id AND",
 "    rpi2.sumo_chain_id = uc.chain_id AND",
-"    rpi2.sumo_chain_id > 0",
+"    rpi2.sumo_chain_id != '' ",
 "",
 "JOIN residues r2 ON",
 "    r2.struct_id = uc.struct_id AND",
