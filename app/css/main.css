@@ -17,6 +17,10 @@ h1, h2 {
   padding-bottom: 30px;
 }
 
+.important_text {
+	font-size: 1.5em;
+}
+
 #structure_table tr td:hover{
   cursor: pointer;
 }
