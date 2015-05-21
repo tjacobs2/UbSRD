@@ -1,3 +1,6 @@
 .DS_Store
 *db3
 node_modules
+forever.log
+err.log
+out.log
