@@ -1,5 +1,5 @@
 var sqlite = require('sqlite3');
-var db = new sqlite.Database('032015_UBSRD_final.db3');
+var db = new sqlite.Database('062015_UBSRD_final.db3');
 
 exports.get_interaction_types = function(callback) {
   var query = "SELECT * FROM ppi_id"

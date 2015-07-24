@@ -88,7 +88,7 @@ app.get(['/api/phylo','/ubsrd/api/phylo'], function(req, res) {
   Download the entire database
 */
 app.get(['/api/download','/ubsrd/api/download'], function(req, res) {
-  res.download(__dirname + '/032015_UBSRD_final.db3'); 
+  res.download(__dirname + '/062015_UBSRD_final.db3'); 
 });
 
 app.get(['/api/example1','/ubsrd/api/example1'], function(req, res) {
