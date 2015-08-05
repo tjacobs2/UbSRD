@@ -30,9 +30,9 @@ define([
 			})[0];
 			console.log(structure);		
 			console.log(structure.attributes.ubq_chain);		
-			console.log(structure.attributes.ubq_res);		
+			console.log(structure.attributes.real_ubq_num);		
 			console.log(structure.attributes.partner_chain);		
-			console.log(structure.attributes.partner_res);		
+			console.log(structure.attributes.real_partner_num);		
 			url = '#view/?';
 	   		url += $.param(structure.attributes); 
 	   		document.location.href = url;
