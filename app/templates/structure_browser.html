@@ -41,12 +41,13 @@
 	    <label for="interaction_types" class="col-sm-2 control-label">Partner Type:</label>
     	<div id="target_types" class="checkbox">
 			<% _.each(target_types, function(target_types, index) { %>
-				<% if (index == 0) { %>
-		    		<div class="col-sm-10">
+				<% if (index > 0 && index % 5 == 0) { %>
+					<% console.log(index) %>
+			    	<div class="col-sm-offset-2 col-sm-2">
 				<% } else { %>
-	    			<div class="col-sm-offset-2 col-sm-10">
+			    	<div class="col-sm-2">
 				<% } %>
-	    			<label>
+		    		<label>
 						<input type="checkbox" value=<%= target_types.get('target_id') %> > <%= target_types.get('full_name') %>
 	    			</label>
 				</div>
