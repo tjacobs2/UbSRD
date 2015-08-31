@@ -26,7 +26,7 @@
 			<% _.each(ubl_types, function(ubl_type, index) { %>
 				<% if (index > 0 && index % 5 == 0) { %>
 					<% console.log(index) %>
-			    	<div class="col-sm-offset-2 col-sm-2">
+			    	<div class="col-sm-offset-2 col-md-2">
 				<% } else { %>
 			    	<div class="col-sm-2">
 				<% } %>
@@ -43,13 +43,13 @@
 			<% _.each(target_types, function(target_types, index) { %>
 				<% if (index > 0 && index % 5 == 0) { %>
 					<% console.log(index) %>
-			    	<div class="col-sm-offset-2 col-sm-2">
+			    	<div class="col-lg-offset-2 col-lg-3">
 				<% } else { %>
-			    	<div class="col-sm-2">
+			    	<div class="col-lg-offset-2 col-lg-3">
 				<% } %>
 		    		<label>
 						<input type="checkbox" value=<%= target_types.get('target_id') %> > <%= target_types.get('full_name') %>
-	    			</label>
+	    				</label>
 				</div>
 		    <% }); %>
 		</div>
