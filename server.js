@@ -54,8 +54,43 @@ app.get(['/api/residue_interactions','/ubsrd/api/residue_interactions'], functio
 });
 
 /*
+  Get a target id
+*/
+app.get(['/api/target_types','/ubsrd/api/target_types'], function(req, res) {
+  console.log(req.query);
+  db.get_target_types(function(err, all) {
+    console.log(all.length);
+    res.json(all);
+  });
+});
+
+/*
+  Get a chain type
+*/
+app.get(['/api/chain_types','/ubsrd/api/chain_types'], function(req, res) {
+  console.log(req.query);
+  db.get_chain_types(function(err, all) {
+    console.log(all.length);
+    res.json(all);
+  });
+});
+
+/*
+  Get a ubq residue pair interactions
+*/
+
+app.get(['/api/residue_interactions','/ubsrd/api/residue_interactions'], function(req, res) {
+  console.log(req.query);
+  db.ubq_type_interactions(req.query, function(err, all) {
+    console.log(all.length);
+    res.json(all);
+  });
+});
+
+/*
   Get the set of interaction types
 */
+
 app.get(['/api/interaction_types','/ubsrd/api/interaction_types'], function(req, res) {
   console.log(req.query);
   db.get_interaction_types(function(err, all) {

@@ -9,6 +9,8 @@ Found <%= structures.length %> total structures.
 			<th data-sortable="true">PDB Information</th>
 			<th data-sortable="true">Ubiquitin interface type</th>
 			<th data-sortable="true">Ubiquitin molecule type</th>
+			<th data-sortable="true">Partner type</th>
+			<th data-sortable="true">Chain type</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -19,6 +21,8 @@ Found <%= structures.length %> total structures.
 	    	<td><%= structure.get('pdb_info') %></td>
 	    	<td><%= structure.get('inter_type') %></td>
 	    	<td><%= structure.get('ubl_type') %></td>
+			<td><%= structure.get('target_type') %></td>
+			<td><%= structure.get('chain_type') %></td>
 		</tr>
     <% }); %>
     </tbody>

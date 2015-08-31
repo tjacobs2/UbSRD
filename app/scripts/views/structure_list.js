@@ -21,6 +21,9 @@ define([
 
 		render: function(){
 			this.$el.html( this.template( { structures: this.collection.models } ) );
+			if(this.collection.length > 0) {
+				console.log(this.collection.models[0].attributes);
+			}
   		},
 
   		select_structure: function(ev){

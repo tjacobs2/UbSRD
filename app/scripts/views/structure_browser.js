@@ -4,6 +4,8 @@ define([
 	'models/structure_collection',
 	'models/interaction_types',
 	'models/ubq_types',
+	'models/target_types',
+	'models/chain_types',
 	'views/structure_list',
 	'ladda'
 ], function(
@@ -12,6 +14,8 @@ define([
 	StructureCollection,
 	InteractionTypes,
 	UblTypes,
+	TargetTypes,
+	ChainTypes,
 	StructureListView,
 	Ladda
 ){
@@ -29,6 +33,13 @@ define([
 
 			this.ubl_types = new UblTypes([], {});
 			this.ubl_types.fetch({async:false});
+			
+			this.target_types = new TargetTypes([], {});
+			this.target_types.fetch({async:false});
+
+			this.chain_types = new ChainTypes([], {});
+			this.chain_types.fetch({async:false});
+			
 			_.bindAll(this, 'filter_structures', 'update_table', 'render');
 		},
 
@@ -45,7 +56,9 @@ define([
 			console.log(this.ubl_types.models);
 			this.$el.html( this.template({
 				interaction_types: this.interaction_types.models,
-				ubl_types: this.ubl_types.models
+				ubl_types: this.ubl_types.models,
+				target_types: this.target_types.models,
+				chain_types: this.chain_types.models
 			}) );
 			this.list_view.$el = this.$('#structure_list');
 			this.list_view.render();
@@ -67,7 +80,18 @@ define([
        			options.ubl_types.push($(this).val());
      		});
 
-	    	var structures = new StructureCollection([], options);
+			options.target_types = [];
+			$('#target_types :checked').each(function() {
+       			options.target_types.push($(this).val());
+     		});
+	    	
+			options.chain_types = [];
+			$('#chain_types :checked').each(function() {
+       			options.chain_types.push($(this).val());
+     		});
+
+			
+			var structures = new StructureCollection([], options);
 			structures.fetch({
 				success: this.update_table
 			});

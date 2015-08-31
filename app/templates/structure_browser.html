@@ -38,6 +38,38 @@
     	</div>
 	</div>
 	<div class="form-group">
+	    <label for="interaction_types" class="col-sm-2 control-label">Partner Type:</label>
+    	<div id="target_types" class="checkbox">
+			<% _.each(target_types, function(target_types, index) { %>
+				<% if (index == 0) { %>
+		    		<div class="col-sm-10">
+				<% } else { %>
+	    			<div class="col-sm-offset-2 col-sm-10">
+				<% } %>
+	    			<label>
+						<input type="checkbox" value=<%= target_types.get('target_id') %> > <%= target_types.get('full_name') %>
+	    			</label>
+				</div>
+		    <% }); %>
+		</div>
+	</div>
+	<div class="form-group">
+	    <label for="interaction_types" class="col-sm-2 control-label">Chain Type:</label>
+    	<div id="chain_types" class="checkbox">
+			<% _.each(chain_types, function(chain_types, index) { %>
+				<% if (index == 0) { %>
+		    		<div class="col-sm-10">
+				<% } else { %>
+	    			<div class="col-sm-offset-2 col-sm-10">
+				<% } %>
+	    			<label>
+						<input type="checkbox" value=<%= chain_types.get('chain_id') %> > <%= chain_types.get('chain_type') %>
+	    			</label>
+				</div>
+		    <% }); %>
+		</div>
+	</div>
+	<div class="form-group">
 		<div class="col-sm-offset-2 col-sm-4">
 			<button id="filter" class="btn btn-default ladda-button" data-style="expand-left" data-spinner-color="#000000">
 				<span class="ladda-label">

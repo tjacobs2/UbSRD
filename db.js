@@ -21,13 +21,37 @@ exports.get_ubq_types = function(callback) {
   });
 };
 
+
+exports.get_target_types = function(callback) {
+  var query = "SELECT * FROM target_id"
+  db.all(query,
+    function(err, all) {
+      if(err)
+        console.error(err);
+      callback(err, all);
+  });
+};
+
+exports.get_chain_types = function(callback) {
+  var query = "SELECT * FROM chain_id"
+  db.all(query,
+    function(err, all) {
+      if(err)
+        console.error(err);
+      callback(err, all);
+  });
+};
+
+
+
 exports.get_structures = function(options, callback) {
   var query = [
-  'SELECT * FROM structures s',
-  'JOIN interaction_type i ON',
-  ' s.struct_id = i.struct_id'
+  'SELECT * FROM interaction_type i',
+  'JOIN structures s ON',
+  ' s.struct_id = i.struct_id',
+
   ];
-  if(options.interaction_types || options.pdb_codes || options.ubl_types) {
+  if(options.interaction_types || options.pdb_codes || options.ubl_types || options.target_types || options.chain_types) {
     query.push('WHERE');
   }
 
@@ -58,8 +82,36 @@ exports.get_structures = function(options, callback) {
     query.pop();
     query.push(')');
   }
+  
+  if(options.target_types) {
+    if(query[query.length - 1] != 'WHERE') {
+      query.push('AND');
+    }
+    query.push('(');
+    for (var i = 0, len = options.target_types.length; i < len; i++) {
+      var target_type = options.target_types[i];
+      query.push('i.target_id = ' + target_type);
+      query.push('OR');
+	}
+    query.pop();
+    query.push(')');
+  }
 
-  if(options.pdb_codes) {
+  if(options.chain_types) {
+    if(query[query.length - 1] != 'WHERE') {
+      query.push('AND');
+    }
+    query.push('(');
+    for (var i = 0, len = options.chain_types.length; i < len; i++) {
+      var chain_type = options.chain_types[i];
+      query.push('i.chain_id = ' + chain_type);
+      query.push('OR');
+	}
+    query.pop();
+    query.push(')');
+  }
+ 
+	if(options.pdb_codes) {
     for (var i = 0, len = options.pdb_codes.length; i < len; i++) {
       var pdb_code = options.pdb_codes[i].substring(0,4);
       query.push('i.pdb_code = "' + pdb_code + '"');
