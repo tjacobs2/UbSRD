@@ -24,11 +24,11 @@
 	    <label for="interaction_type" class="col-sm-2 control-label">Ubiquitin Type:</label>
     	<div id="ubl_types" class="checkbox">
 			<% _.each(ubl_types, function(ubl_type, index) { %>
-				<% if (index > 0 && index % 5 == 0) { %>
+				<% if (index > 0 && index % 3 == 0) { %>
 					<% console.log(index) %>
-			    	<div class="col-sm-offset-2 col-sm-2">
+			    	<div class="col-sm-offset-2 col-md-3">
 				<% } else { %>
-			    	<div class="col-sm-2">
+			    	<div class="col-sm-3">
 				<% } %>
 		    		<label>
 						<input type="checkbox" value=<%= ubl_type.get('ubl_id') %> > <%= ubl_type.get('full_name') %>
@@ -41,15 +41,16 @@
 	    <label for="interaction_types" class="col-sm-2 control-label">Partner Type:</label>
     	<div id="target_types" class="checkbox">
 			<% _.each(target_types, function(target_types, index) { %>
-				<% if (index > 0 && index % 5 == 0) { %>
+				<% if (index > 0 && index % 3 == 0) { %>
+					<% console.log(target_types.get('full_name')) %>
 					<% console.log(index) %>
-			    	<div class="col-sm-offset-2 col-sm-2">
+			    	<div class="col-sm-offset-2 col-md-3">
 				<% } else { %>
-			    	<div class="col-sm-2">
+			    	<div class="col-sm-3">
 				<% } %>
 		    		<label>
 						<input type="checkbox" value=<%= target_types.get('target_id') %> > <%= target_types.get('full_name') %>
-	    			</label>
+	    				</label>
 				</div>
 		    <% }); %>
 		</div>
