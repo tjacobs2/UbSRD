@@ -1,16 +1,18 @@
 <h3>How to use these example</h3>
 <p>
-This page is meant to demonstrate how to query the UbSRD SQL database for users that download the .db3 file. 
-UbSRD contains A LOT of data about the PDBs that it contains (see <a href="http://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/FeaturesReporter/features_reporters/FeatureReporters"> Features Reporter</a>
+This page is meant to demonstrate how to query the UbSRD SQL database for users that have download the .db3 file. 
+The UbSRD database contains A LOT more data about the PDBs than we used in our analyses (see <a href="http://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/FeaturesReporter/features_reporters/FeatureReporters"> Features Reporter</a> for a list of possible features).
 </p>
 
 <p>
-If you have downloaded the database, first make sure that you have Sqlite installed, then in a terminal type "sqlite3" followed by the database name. SQLite is a simple, yet powerful language,for working with databases and
-the syntax is described here <a href="https://www.sqlite.org/lang.html"> SQLite. </a> To create UbSRD, we developed several UbSRD specific tables, yyping ".tables" will show you all the tables in the database and typing 
-".schema" followed by a "your table name" will show you the column definitions for that table. We have also created  are also id tables for UBL type, protein-protein interactions (ppi_id), binding partner (target_id), and (chain_id) 
-that contain all possible fields for each catagory. All the UBQ and SUMO chains are identified in seperate tables and the protein interactions for each chain are contained within this table. Users keep in mind that Rosetta renumbers
-the protein chains and I have renumbered all the UBQ and SUMO chains so that they have identical numberings; therefore, to get the numbering found in the PDB use the ubq_numbering or sumo_numbering tables and the residue_pdb_identification 
-table for non UBL chains. Now for some example queries! 
+If you have downloaded the database,  first make sure that you have Sqlite installed,  then in a terminal type "sqlite3" followed by the database name. SQLite is a simple,  yet powerful language,  for working with databases and
+the syntax is described here <a href="https://www.sqlite.org/lang.html"> SQLite. </a> To create UbSRD we developed several UbSRD specific tables:  typing ".tables" reveals all table names in the database and typing 
+".schema" followed by "any table name" will show you the column definitions. The interaction_type table contains most of the UbSRD specific data (all the data required to perform the queries found on <a href="http://rosettadesign.med.unc.edu/ubsrd/?#browse/structure"> Structural_Properties</a>). 
+We have also created id tables for UBL type (ubl_id), protein-protein interactions (ppi_id), binding partner (target_id), and chain type (chain_id), which contain all possible fields for each catagory and integers assigned to each category type.
+All the UBQ and SUMO chains are represented in separate tables and the protein interactions and chain ids are included in this table. Additionally there are two tables,  db_type and cj_type, that contain deubiquitylase and conjugated interface specific data. 
+IMPORTANT NOTE: Keep in mind that Rosetta renumbers the protein chains and we have renumbered all the UBQ and SUMO chains so that they have identical numberings; therefore, to derive the PDB numbering use the ubq_numbering or sumo_numbering tables 
+for UBL chains and the residue_pdb_identification table for non-UBL chains. Also, in the Rosetta Features reporter framework each PDB is given an integer struct_id which can be used to relate most tables. 
+The syntax for PDB numbering and joining on struct_id are found in the examples below. 
 </p>
 
 <p>
@@ -31,7 +33,7 @@ The plot uses D3 and show the up-to-date counts for each interaction type <a hre
     GROUP BY i.inter_type;
 	</pre>
 	<div id="example1_plot">
-	<div>
+	</div>
 </div>
 
 <br/>
@@ -89,8 +91,14 @@ The plot uses D3 and show the up-to-date counts for each interaction type <a hre
 		h.acc_id = hs2.site_id
 
 	WHERE
-		it.ubl_id = '1' AND
+		it.ubl_id = '1'
+	;
 	</pre>
 	<div id="example2_plot">
 	<div>
+
+<p>
+If you are interested in using UbSRD but having trouble with querying the database please contact joseph.scott.harrison"at"gmail.com
+</p>
+
 

@@ -126,6 +126,13 @@ app.get(['/api/download','/ubsrd/api/download'], function(req, res) {
   res.download(__dirname + '/062015_UBSRD_final.db3'); 
 });
 
+/*
+  Download the entire database
+*/
+app.get(['/api/download_alignment','/ubsrd/api/download_alignment'], function(req, res) {
+  res.download(__dirname + ''); 
+});
+
 app.get(['/api/example1','/ubsrd/api/example1'], function(req, res) {
   db.example1(function(err, all) {
     var query_result = all;
