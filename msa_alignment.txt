@@ -1,0 +1,490 @@
+>Elongin Elongin
+--------------------------------------MDGEEKTYGGCEGPDAMYVKL----------ISSD--GHEFI
+VK-REHALTSG----TIKAMLS-GPGQFAENETNEVNFREIPSHVLS-----------KVCMY--FTYKVRY----TNSS
+T-------EIPEFPIAPEIALELLMAANFLDC------------------------------------------------
+---------------------------
+>URM URM
+------------------------------------------------MAAPLSVEVEFGG----GAELLFD--GIKKHR
+VT-LPGQEEPWDIRNLLIWIKKNLLKE--RPELF-IQ----GDSV-------------RPGIL-----V-----LINDAD
+W----ELLGELDYQLQDQDSVLFISTLHGG--------------------------------------------------
+---------------------------
+>UFM1 UFM1
+----------------------------------------------------MSKVSFK--------ITLTSDPRLPYKV
+LS-VP--EST-----PFTAVLK-FAAE--EFKV---P----AAT------------------------S-----AIITND
+GIGINPAQTAGNVFLKHGSELRIIPRDRVG--------------------------------------------------
+---------------------------
+>2KJRA 2KJRA
+------------------------------------------------HGKSDFIKVNV--------SNSHND----AVA
+FE-VKL-AKD----LTVAQLKT-KLEI--LTGG---C----AGTM-------------KVQV---FKGD-TCVSTMDNND
+-------AQLGYYANSDGLRLHVVDS------------------------------------------------------
+---------------------------
+>2DZJA 2DZJA
+------------------------------------------------MKHYEVEILDA--------KTREKL-----CF
+LDKVE--PHA-----TIAEIKN-LFTK---THPQWYP-----ARQ-------------SLRLDP--KGK-----SLKDED
+--------VLQKLPVGTTATLYFRDL------------------------------------------------------
+---------------------------
+>4PYZ_UBL1 4PYZ_UBL1A
+----------------------------------MQVQIVAEDQFCGHQGNDMYDEEKVKY-------TV----------
+FKVLK---NS-----SLAEFVQ-SLSQ--TMGF---P----QDQI-------------RLWP---MQAR-----SNGTKR
+-------PAMLDNEADGNKTMIELSDNENPWTIFLETVDPE---------------------------------------
+---------------------------
+>2KVRA 2KVRA
+----------------------------------MQVQIVAEDQFCGHQGNDMYDEEKVKY-------TV----------
+FKVLK---NS-----SLAEFVQ-SLSQ--TMGF---P----QDQI-------------RLWP---MQAR-----SNGTKR
+-------PAMLDNEADGNKTMIELSDNENPWTIFLET-------------------------------------------
+---------------------------
+>4PYZ_UBL2 4PYZ_UBL2A
+-----------------------------------------------------------------DVMLFLKMYDPKTRS
+LNYCGHIYTP--ISCKIRDLLP-VMCD--RAGFI--------QDT-------------SLIL---YEEV-------KPNL
+T------ERIQDYDVSLDKALDELMDGDIIVF------------------------------------------------
+---------------------------
+>2L76A 2L76A
+---------------------------------QGQEDEVVLVEGPTLPETPRLFPLKI--------RCRAD-----LVR
+LP-LR--MSE-----PLQSVVD-HMAT--HLGV---S----PSRI-------------LL-L---FGET-----ELSPT-
+-------ATPRTLKLGVADIIDCVV-LTSS--------------------------------------------------
+---------------------------
+>2KZRA 2KZRA
+------------------------------------------------------------------WRVRCKA-KGGTHL
+LQGLS--SRT-----RLRELQG-QIAA--ITGI---A----PGSQ-------------RILVG--YPPECLD---LSDRD
+I-------TLGDLPIQSGDMLIVEEDQTRPKASPS---------------------------------------------
+---------------------------
+>3A4RA 3A4RA
+-------------------------------------------GPLGSQ----ELRLRV--------QGKEK---HQMLE
+IS-LS--PDS-----PLKVLMS-HYEE--AMGL---S----GHKL-------------SF-F---FDGT-----KLSGK-
+-------ELPADLGLESGDLIEVW-----G--------------------------------------------------
+---------------------------
+>3A4SC 3A4SC
+-----------------------------------------------------ELRLRV--------QGKEK---HQMLE
+IS-LS--PDS-----PLKVLMS-HYEE--AMGL---S----GHKL-------------SF-F---FDGT-----KLSGK-
+-------ELPADLGLESGDLIEVW-----G--------------------------------------------------
+---------------------------
+>2JXXA 2JXXA
+------------------------------------------LVPRGSTETSQQLQLRV--------QGKEK---HQTLE
+VS-LS--RDS-----PLKTLMS-HYEE--AMGL---S----GRKL-------------SF-F---FDGT-----KLSGR-
+-------ELPADLGMESGDLIEVW-----G--------------------------------------------------
+---------------------------
+>3RD2A 3RD2A
+-----------------------------------------------------QLQLRV--------QGKEK---HQTLE
+VS-LS--RDS-----PLKTLMS-HYEE--AMGL---S----GRKL-------------SF-F---FDGT-----KLSGR-
+-------ELPADLGMESGDLIEVW-----G--------------------------------------------------
+---------------------------
+>SMT3 SMT3
+--------------------------------SDSEVNQEAKPEVKPEVKPETHINLKV--------S-DGS----SEIF
+FK-IK--KTT-----PLRRLME-AFAK--RQGK---E----MDSL-------------RF-L---YDGI-----RIQAD-
+-------QTPEDLDMEDNDIIEAHREQIGG--------------------------------------------------
+---------------------------
+>SUMO1 SUMO1
+----------------------------------SDQEAKPSTEDLGDKKEGEYIKLKV--------IGQDS----SEIH
+FK-VK--MTT-----HLKKLKE-SYCQ--RQGV---P----MNSL-------------RF-L---FEGQ-----RIADN-
+-------HTPKELGMEEEDVIEVYQEQTGG--------------------------------------------------
+---------------------------
+>SUMO4 SUMO4
+-------------------------------------MANEKPTEEVKTENNNHINLKV--------AGQDG----SVVQ
+FK-IK--RQT-----PLSKLMK-AYCE--PRGL---S----MKQI-------------RF-R---FGGQ-----PISGT-
+-------DKPAQLEMEDEDTIDVFQQPTGG--------------------------------------------------
+---------------------------
+>SUMO2 SUMO2
+-------------------------------------MADEKPKEGVKTENNDHINLKV--------AGQDG----SVVQ
+FK-IK--RHT-----PLSKLMK-AYCE--RQGL---S----MRQI-------------RF-R---FDGQ-----PINET-
+-------DTPAQLEMEDEDTIDVFQQQTGG--------------------------------------------------
+---------------------------
+>SUMO3 SUMO3
+-------------------------------------MSEEKPKEGVKTEN-DHINLKV--------AGQDG----SVVQ
+FK-IK--RHT-----PLSKLMK-AYCE--RQGL---S----MRQI-------------RF-R---FDGQ-----PINET-
+-------DTPAQLEMEDEDTIDVFQQQTGG--------------------------------------------------
+---------------------------
+>ATG12 ATG12
+MAEEPQSVLQLPTSIAAGGEGLTDVSPETTTPEPPSSAAVSPGTEEPAGDTKKKIDILL--------KAVGDTPIMKTKK
+WA-VE--RTR-----TIQGLID-FIKK--FLKL--VA----SEQL-------------FIYVNQSFAPS-------PDQE
+V------GTLYECFGSDGKLVLHYCKSQAWG-------------------------------------------------
+---------------------------
+>1V6EA 1V6EA
+-------------------------------------------------------MVFI--------SSSLN-----SFR
+SE-KRY-SRS----LTIAEFKC-KLEL--VVGS---P----ASCM-------------ELEL---YGADDKFYSKLDQED
+-------ALLGSYPVDDGCRIHVIDHS-----------------------------------------------------
+---------------------------
+>1T0YA 1T0YA
+--------------------------------------------------MTEVYDLEI--------TTNAT-----DFP
+ME-KKY-PAG----MSLNDLKK-KLEL--VVGT---T----VDSM-------------RIQL---FDGDDQLKGELTDGA
+-------KSLKDLGVRDGYRIHAVDVTGGNED------------------------------------------------
+---------------------------
+>2YLMA 2YLMA
+----------------------------------------------------RDLYHRVDVIF--CDKTIPND---PGFV
+VT-LSNRMNYF-------QVAK-TVAQ--RLNT---------DPM-------------LLQF---FKSQGY-----RDGP
+GNPLR-----HNYEGTLRDLLQFFKPRQPKKLYYQQL-------------------------------------------
+---------------------------
+>2DZMA 2DZMA
+----------------------------------------------------------------------RMLDFRVEYR
+DRNVDVVLEDT---CTVGEIKQ-ILEN--ELQI---P----VSKM-------------LLKGWK--TGD------VEDST
+--------VLKSLHLPKNNSLYVLTPDLPPPS------SSSHAGAL------QESLN-----------------------
+---------------------------
+>1WF9A 1WF9A
+-----------------------------------------------------------------------ML--RVRSR
+DGLERVSVDGPH--ITVSQLKT-LIQD--QLQI---P----IHNQ-------------TL-------------------S
+--------TNRNLLLAKSPSDFLAFTDMADPNLRISSLNLAHGSMVYLAYEGERTIR-----------------------
+---------------------------
+>3GOEA 3GOEA
+-----------------------------------------------------KLITLL---------LR-S---SKSED
+LR-LS--IPV---DFTVKDLIK-RYCT--EVKI---S----FHER-------------IRLE---FEGE-----WLDPND
+-------Q-VQSTELEDEDQVSVVLD------------------------------------------------------
+---------------------------
+>3RCZA 3RCZA
+-----------------------------------------------------KLITLL---------LR-S---SKSED
+LR-LS--IPV---DFTVKDLIK-RYCT--EVKI---S----FHER-------------IRLE---FEGE-----WLDPND
+-------Q-VQSTELEDEDQVSVVLD------------------------------------------------------
+---------------------------
+>2DAFA 2DAFA
+-------------------------------QESVEDSL-------------ATVKVVL---------IPVG----QEIV
+IP-FK--VDT-----ILKYLKD-HFSH--LLGI---P----HSVL-------------QI-R---YSGK-----ILKNNE
+--------TLVQHGVKPQEIVQVEIFSTNPDLYPVRRIDGLTDVSQIITVS-----------------------------
+---------------------------
+>startings4 startings4E74_fixedA
+--------------------------------------------------DYKTLVLSC---------VSPS----PEVP
+VKILNC---D-----TITQVKEKILDA--IFKNVPCSHRPKAADM-------------DLEWRQGSGARMIL--QDEDIT
+TKIWKRLNTLAHYQVPDGSVVALVSKQVT---------------------------------------------------
+---------------------------
+>4E71A 4E71A
+--------------------------------------------------EYAPLTVSV---------IVQDE-GVDAIP
+VKVLNC---D-----TISQVKEKIIDQ--VYR---------PDSV-------------VLEWRPSTA--QIL--SDLDLT
+SQRWKRVNTLMHYNVRDGATLILSKV------------------------------------------------------
+---------------------------
+>1TTNA 1TTNA
+--------------------------MIEEKSDIETLDIPEPPPNSGYECQLRLRLSTG--------KDL-------KLV
+VR-----STD-----TVFHMKR-RLHA--AEGV---E----PGSQ-------------RW-F---FSGR-----PLTDK-
+-------MKFEELKIPKDYVVQVIVSQPVQNPTPVEN-------------------------------------------
+---------------------------
+>1WJUA 1WJUA
+------------------------------------------------------------DNYRTTGIATIEVFLPPRLK
+KDRKNL-LETR-LHITGRELRS-KIAE--TFGLQENYIKIVINKK-------------QLQL-----GK-----------
+--------TLEEQGVAHNVKAMVLELKQ----------------------------------------------------
+---------------------------
+>2LGYA 2LGYA
+-----------------------------------M--------------PTQDIRLWV--------SVEDAQMHTVTIW
+LT-VR--PDM-----TVASLKD-MVFL--DYGF---P----PVLQ-------------QW-V----IGQ-----RLARDQ
+-------ETLHSHGVRQNGDSAYLYLLSARNTSLN---------------------------------------------
+---------------------------
+>4DBGA 4DBGA
+----------------------------------HMQRVPLSVQLKPEVSPTQDIRLWV--------SVEDAQMHTVTIW
+LT-VR--PDM-----TVASLKD-MVFL--DYGF---P----PVLQ-------------QW-V----IGQ-----RLARDQ
+-------ETLHSHGVRQNGDSAYLYLLSARNTS-----------------------------------------------
+---------------------------
+>2BPSA 2BPSA
+--------------------------------------------------HGSYIDITIDL------KHYNGS-VFDLRL
+SDYHP-----------VKKVID-IAWQ--AQSVSMPP----REGH-------------WIRVVN--KDK-----VFSGEC
+--------KLSDCGITNGDRLEIL--------------------------------------------------------
+---------------------------
+>1V5OA 1V5OA
+------------------------------------------------------MLITVYCVR----RDL-T---EVTFS
+LQ-VN--PDF-----ELSNFRV-LCEL--ESGV---P----AEEA-------------QI-V---YMEQ-----LLTDDH
+-------CSLGSYGLKDGDMVVLLQKDNVGLRTPGRTPS-----------------------------------------
+---------------------------
+>UBL5 UBL5
+---------------------------------------------------------MI--------EVVCNDRLGKKVR
+VK-CN--TDD-----TIGDLKK-LIAA--QTGT---R----WNKI-------------VL-K----KWY-----TIFKDH
+-------VSLGDYEIHDGMNLELYYQ------------------------------------------------------
+---------------------------
+>1V2YA 1V2YA
+-----------------------------------------------------MTVRVCKM-------------DGEVMP
+VVVVQ---NA-----TVLDLKK-AIQR--YVQLK--Q-----EREGGVQHISWSYVWRTYHLTS--AGE-----KLTEDR
+-------KKLRDYGIRNRDEVSFIKKLGQKS-------------------------------------------------
+---------------------------
+>ISG15 ISG15
+---------------------------------------------------GWDLTVKM---------LA-G---NEFQV
+SL-SS--SMS------VSELKA-QITQ--KIGV---H----AFQQ-------------RLAV---HPSG-----VALQDR
+-------VPLASQGLGPGSTVLLVVDKCDEPLSILVRNNKGRSSTYEVRLTQTVAHLKQQVSGLEGVQDDLFWLTFEGKP
+LEDQLPLGEYGLKPLSTVFMNLRLRGG
+>1WGDA 1WGDA
+------------------------------------------------------VTLLV--------KSPNQ----RHRD
+LE-LSG--DRG---WSVGHLKA-HLSRVYPERP---R----PEDQ-------------RL-I---YSGK-----LLLDHQ
+--------CLRDLLPKQEKRHVLHLVCNVKS-------------------------------------------------
+---------------------------
+>2KDBA 2KDBA
+---------------------------------------------------GHPVTLII--------KAPNQ----KYSD
+QT-ISC--FLN---WTVGKLKT-HLSNVYPSKP---L----TKDQ-------------RL-V---YSGR-----LLPDHL
+--------QLKDILRKQDEYHMVHLV------------------------------------------------------
+---------------------------
+>1WIAA 1WIAA
+------------------------------------------------------INVRL--------KFLND---TEELA
+VA--R--PED-----TVGTLKS-KYFP--GQES----------QM-------------KL-I---YQGR-----LLQDPA
+-------RTLSSLNITNNCVIHCHRSPPGAAVS-----------------------------------------------
+---------------------------
+>4HWIB 4HWIB
+----------------------------------------------------SMIRVRI---------KY-G---AVYHE
+IN-IS--PQA-----SFGELKK-MLTG--PTGI---H----HQDQ-------------KL-M---YKDK-----ERDSKA
+-------F-LDVSGVKDKSKMVLIED------------------------------------------------------
+---------------------------
+>2LWPA 2LWPA
+-------------------------------------MAKTEEMVQTEEMETPRLSVIV---------TH-S---NERYD
+LL-VT--PQQGNSEPVVQDLAQ-LVEE--ATGV---P----LPFQ-------------KL-I---FKGK-----SLKEME
+-------TPLSALGMQNGCRVMLIGEKSN---------------------------------------------------
+---------------------------
+>2M8SA 2M8SA
+-------------------------------------MAKTEEMVQTEEMETPRLSVIV---------TH-S---NERYD
+LL-VT--PQQGNSEPVVQDLAQ-LVEE--ATGV---P----LPFQ-------------KL-I---FKGK-----SLKEME
+-------TPLSALGMQNGCRVMLIGEKSN---------------------------------------------------
+---------------------------
+>1WXVA 1WXVA
+------------------------------------------------------LTVTV---------TH-S---NEKHD
+LH-VT--SQQGSSEPVVQDLAQ-VVEE--VIGV---P----QSFQ-------------KL-I---FKGK-----SLKEME
+-------TPLSALGIQDGCRVMLIGKKNS---------------------------------------------------
+---------------------------
+>1IYFA 1IYFA
+-----------------------------------------------------SMIVFV--------RFN-S---SHGFP
+VE-VD--SDT-----SIFQLKE-VVAK--RQG---VP----ADQL-------------RV-I---FAGK-----ELRND-
+-------WTVQNCDLDQQSIVHI-VQRPWRK-------------------------------------------------
+---------------------------
+>2KNBA 2KNBA
+-----------------------------------------------------SMIVFV--------RFN-S---SYGFP
+VE-VD--SDT-----SIFQLKE-VVAK--RQG---VP----ADQL-------------RV-I---FAGK-----ELQNH-
+-------LTVQNCDLEQQSIVHI-VQRPQRK-------------------------------------------------
+---------------------------
+>3B1LX 3B1LX
+------------------------------------------------------MIVFV--------RFN-S---SYGFP
+VE-VD--SDT-----SILQLKE-VVAK--QQG---VP----ADQL-------------RV-I---FAGK-----ELPNH-
+-------LTVQNCDLEQQSIVHI-VQRPRRR-------------------------------------------------
+---------------------------
+>2ZEQA 2ZEQA
+----------------------------------------------------MGMIVFV--------RFN-S---SYGFP
+VE-VD--SDT-----SILQLKE-VVAK--RQG---VP----ADQL-------------RV-I---FAGK-----ELPNH-
+-------LTVQNCDLEQQSIVHI-VQRPRRR-------------------------------------------------
+---------------------------
+>1MG8A 1MG8A
+----------------------------------------------------MGMIVFV--------RFN-S---SYGFP
+VE-VD--SDT-----SILQLKE-VVAK--RQG---VP----ADQL-------------RV-I---FAGK-----ELPNH-
+-------LTVQNCDLEQQSIVHI-VQRPRRR-------------------------------------------------
+---------------------------
+>1X1MA 1X1MA
+------------------------------------MSLSDWHLAVKLADQPLAPKSIL--------QLPET---ELGEY
+SL--G---GY-----SISFLKQ-LIAG--KLQESVPD----PELI-------------DL-I---YCGR-----KLKD-D
+-------QTLDFYGIQPGSTVHVLRKSWS---------------------------------------------------
+---------------------------
+>1WE6A 1WE6A
+--------------------------------KFDESALVPEDQFLAQHPGPATIRVS------KPNENDGQ----FMEI
+TV-QS--LSE-----NVGSLKE-KIAG--EIQI---P----ANKQ-------------KL-S---GKAG-----FLKDNM
+--------SLAHYNVGAGEILTLSLRERS---------------------------------------------------
+---------------------------
+>1ZKHA 1ZKHA
+---------------------------------------------------PVSIKVQVPNMQDKTEWKLNG----QVLV
+FT-LP--LTD-----QVSVIKV-KIHE--ATGM---P----AGKQ-------------KL-Q---YEGI-----FIKDSN
+--------SLAYYNMANGAVIHLALKERG---------------------------------------------------
+---------------------------
+>1WE7A 1WE7A
+----------------------------------TEDSLMPEEEFLRRNKGPVSIKVQVPNMQDKTEWKLNG----QGLV
+FT-LP--LTD-----QVSVIKV-KIHE--ATGM---P----AGKQ-------------KL-Q---YEGI-----FIKDSN
+--------SLAYYNMASGAVIHLALKERS---------------------------------------------------
+---------------------------
+>2FAZA 2FAZA
+----------------------------------------------------GSMWIQV--------RTMDG---RQTHT
+VDSLS--RLT-----KVEELRR-KIQE--LFH---VE----PGLQ-------------RL-F---YRGK-----QMEDG-
+-------HTLFDYEVRLNDTIQLLVR-QS---------------------------------------------------
+---------------------------
+>1WY8A 1WY8A
+------------------------------------------------------MWIQV--------RTIDG---SKTCT
+IEDVS--RKA-----TIEELRE-RVWA--LFD---VR----PECQ-------------RL-F---YRGK-----QLENG-
+-------YTLFDYDVGLNDIIQLLVRPDS---------------------------------------------------
+---------------------------
+>1WH3A 1WH3A
+------------------------------------------------------IQVFV--------KNP-D---GGSYA
+YA-IN--PNS-----FILGLKQ-QIED--QQG---LP----KKQQ-------------QL-E---FQGQ-----VLQDW-
+-------LGLGIYGIQDSDTLILSKKK-----------------------------------------------------
+---------------------------
+>2L7RA 2L7RA
+------------------------------------------------LVPRGSMQLFV--------RAQ-E---LHTFE
+VT-GQ----E-----TVAQIKAH-VAS--LEGI---A----PEDQ-------------VV-L---LAGA-----PLEDE-
+-------ATLGQCGVEALTTLEVAGRMLG-G-------------------------------------------------
+---------------------------
+>2DZIA 2DZIA
+------------------------------------------------------MQLTV--------KAL-Q---GRECS
+LQ-VP--EDE-----LVSTLKQ-LVSE--KLN---VP----VRQQ-------------RL-L---FKGK-----ALADG-
+-------KRLSDYSIGPNSKLNLVVKPL----------------------------------------------------
+---------------------------
+>2LRWA 2LRWA
+------------------------------------------------------MLLKV--------KTV-S---NKVIQ
+ITSLT--DDN-----TIAELKG-KLEE--SEG---IP----GNMI-------------RL-V---YQGK-----QLEDE-
+-------KRLKDYQMSAGATFHMVVALRAGC-------------------------------------------------
+---------------------------
+>NEDD8 NEDD8
+------------------------------------------------------MLIKV--------KTL-T---GKEIE
+ID-IE--PTD-----KVERIKE-RVEE--KEG---IP----PQQQ-------------RL-I---YSGK-----QMNDE-
+-------KTAADYKILGGSVLHLVLALRGG--------------------------------------------------
+---------------------------
+>2JVCA 2JVCA
+-----------------------------------G---PL-----------GSMQIFV--------KTL-T---GKTIT
+ID-VD--HAD-----TVGAVKA-KIYD--KEG---IP----PDQQ-------------RL-I---FGGK-----QLEDS-
+-------NAMSDYNVQKESTLHLVLRLRGGV-------------------------------------------------
+---------------------------
+>2K25A 2K25A
+-----------------------------------GSLVPR-----------GSMQIFV--------KTL-T---GKTIT
+LE-VE--PSD-----TIENVKA-KIQD--KEG---IP----PDQQ-------------RL-I---FAGK-----QLEDG-
+-------RTLSEYNIQKESTLHLVLRLRGYADLREDPDRQDHHPGS--GAQ-----------------------------
+---------------------------
+>ubiquitin ubiquitin
+------------------------------------------------------MQIFV--------KTL-T---GKTIT
+LE-VE--PSD-----TIENVKA-KIQD--KEG---IP----PDQQ-------------RL-I---FAGK-----QLEDG-
+-------RTLSDYNIQKESTLHLVLRLRGG--------------------------------------------------
+---------------------------
+>2KANA 2KANA
+-----------------------------------------------SHAAVRKIHVTV--------KFP-S----KQFT
+VE-VD--RTE-----TVSSLKD-KIHI--VEN---TP----IKRM-------------QL-Y---YSGI-----ELADDY
+-------RNLNEYGITEFSEIVVFLKSINRAKD-----------------------------------------------
+---------------------------
+>1UELA 1UELA
+------------------------------------------------------MQVTL--------KTL-Q---QQTFK
+ID-ID--PEE-----TVKALKE-KIES--EKGKDAFP----VAGQ-------------KL-I---YAGK-----ILNDD-
+-------TALKEYKIDEKNFVVVMVTKPKAVSTPAPAT------------------------------------------
+---------------------------
+>1P1AA 1P1AA
+-----------------------------------------------------HMQVTL--------KTL-Q---QQTFK
+ID-ID--PEE-----TVKALKE-KIES--EKGKDAFP----VAGQ-------------KL-I---YAGK-----ILNDD-
+-------TALKEYKIDEKNFVVVMVTKPKAVST-----------------------------------------------
+---------------------------
+>1P98A 1P98A
+----------------------------------------------------MAVTITL--------KTL-Q---QQTFK
+IR-ME--PDE-----TVKVLKE-KIEA--EKGRDAFP----VAGQ-------------KL-I---YAGK-----ILSDD-
+-------VPIRDYRIDEKNFVVVMVTK-----------------------------------------------------
+---------------------------
+>2WYQA 2WYQA
+-----------------------------------GIP--------------MAVTITL--------KTL-Q---QQTFK
+IR-ME--PDE-----TVKVLKE-KIEA--EKGRDAFP----VAGQ-------------KL-I---YAGK-----ILSDD-
+-------VPIRDYRIDEKNFVVVMVTKTKAG-------------------------------------------------
+---------------------------
+>1QZEA 1QZEA
+----------------------------------------------------SAVTITL--------KTL-Q---QQTFK
+IR-ME--PDE-----TVKVLKE-KIEA--EKGRDAFP----VAGQ-------------KL-I---YAGK-----ILSDD-
+-------VPIRDYRIDEKNFVVVMVT------------------------------------------------------
+---------------------------
+>1OQYA 1OQYA
+----------------------------------------------------SAVTITL--------KTL-Q---QQTFK
+IR-ME--PDE-----TVKVLKE-KIEA--EKGRDAFP----VAGQ-------------KL-I---YAGK-----ILSDD-
+-------VPIRDYRIDEKNFVVVMVTKT----------------------------------------------------
+---------------------------
+>4DWFA 4DWFA
+-----------------------------------G--------------EPDSLEVLV--------KTL-D---SQTRT
+FI-VG--AQM-----NVKEFKE-HIAA--SVS---IP----SEKQ-------------RL-I---YQGR-----VLQDD-
+-------KKLQEYNV-GGKVIHLVERAPPQTHLPS---------------------------------------------
+---------------------------
+>4EEWA 4EEWA
+-----------------------------------GME-PNDSTSTAV-EEPDSLEVLV--------KTL-D---SQTRT
+FI-VG--AQM-----NVKEFKE-HIAA--SVS---IP----SEKQ-------------RL-I---YQGR-----VLQDD-
+-------KKLQEYNV-GGKVIHLVER------------------------------------------------------
+---------------------------
+>1WX9A 1WX9A
+------------------------------------------------------LEVLV--------KTL-D---SQTRT
+FI-VG--AQM-----NVKEFKE-HIAA--SVS---IP----SEKQ-------------RL-I---YQGR-----VLQDD-
+-------KKLQEYNV-GGKVIHLVERAP----------------------------------------------------
+---------------------------
+>2BWFA 2BWFA
+-----------------------------------LD---------------MSLNIHI--------KS--G---QDKWE
+VN-VA--PES-----TVLQFKE-AINK--ANG---IP----VANQ-------------RL-I---YSGK-----ILKDD-
+-------QTVESYHIQDGHSVHLVKSQP----------------------------------------------------
+---------------------------
+>2BWES 2BWES
+-----------------------------------LD---------------MSLNIHI--------KS--G---QDKWE
+VN-VA--PES-----TVLQFKE-AINK--ANG---IP----VANQ-------------RL-I---YSGK-----ILKDD-
+-------QTVESYHIQDGHSVHLVKSQP----------------------------------------------------
+---------------------------
+>3M63B 3M63B
+-----------------------------------MSDYDIPTTENLYFQGAMSLNIHI--------KS--G---QDKWE
+VN-VA--PES-----TVLQFKE-AINK--ANG---IP----VANQ-------------RL-I---YSGK-----ILKDD-
+-------QTVESYHIQDGHSVHLVKSQP----------------------------------------------------
+---------------------------
+>1WX8A 1WX8A
+------------------------------------------VSGREP--SSRIIRVSV--------KTPQD---CHEFF
+LA--E---NS-----NVRRFKK-QISK--YLHC---N----ADRL-------------VL-I---FTGK-----ILRD-Q
+-------DILSQRGILDGSTVHVVVRSH----------------------------------------------------
+---------------------------
+>1YQBA 1YQBA
+-------------------------------------------SGLVPRGSPHLIKVTV--------KTPKD---KEDFS
+VT--D---TC-----TIQQLKE-EISQ--RFKA---H----PDQL-------------VL-I---FAGK-----ILKD-P
+-------DSLAQCGVRDGLTVHLVIKRQHRAMG-----------------------------------------------
+---------------------------
+>1WX7A 1WX7A
+-------------------------------------------SPA-PVQDPHLIKVTV--------KTPKD---KEDFS
+VT--D---TC-----TIQQLKE-EISQ--RFKA---H----PDQL-------------VL-I---FAGK-----ILKD-P
+-------DSLAQCGVRDGLTVHLVIKRQHRAMGNECPAS-----------------------------------------
+---------------------------
+>2KLCA 2KLCA
+-------------------------------------------------GHPKIMKVTV--------KTPKE---KEEFA
+VP--E---NS-----SVQQFKE-EISK--RFKS---H----TDQL-------------VL-I---FAGK-----ILKD-Q
+-------DTLSQHGIHDGLTVHLVIKTQNRP-------------------------------------------------
+---------------------------
+>1J8CA 1J8CA
+---------------------MAENGESSGPPRPSRGPAAAQGSAAAP-AEPKIIKVTV--------KTPKE---KEEFA
+VP--E---NS-----SVQQFKE-AISK--RFKS---Q----TDQL-------------VL-I---FAGK-----ILKD-Q
+-------DTLIQHGIHDGLTVHLVIK--RDPNSSSVDKYAAA--------------------------------------
+---------------------------
+>UBL3 UBL3
+----------------------------------MSSNVPADMINLRLILVSGKTKEFL--------FSPND----SASD
+IA-KHV--YDN---WPMDWEEE-QVSS--------------PNIL-------------RL-I---YQGR-----FLHGNV
+--------TLGALKLPFGKTTVMHLVARETLPEPNSQGQRNREKTGESNCC-----------------------------
+---------------------------
+>1V86A 1V86A
+-------------------------------------------------VGKELVDLKI---------IW-N---KTKHD
+VK-VP--LDS-----TGSELKQ-KIHS--ITGL---P----PAMQ-------------KV-M---YKGL-----VPEDKT
+-------L--REIKVTSGAKIMVVGSTIS---------------------------------------------------
+---------------------------
+>1WGGA 1WGGA
+------------------------------------------------------YSVTV---------KW-G---KEKFE
+GVELN--TDE-----PPMVFKA-QLFA--LTGV---Q----PARQ-------------KV-M---VKGG-----TLKDD-
+-------D-WGNIKMKNGMTVLMMGSADALPEEPSAKTS-----------------------------------------
+---------------------------
+>3SHQA 3SHQA
+-------------------------------------------------MEVKEVVVIV---------KW-S---GKEYP
+VDLTD--Q-D-----TVEVLRH-EIFR--KTQV---R----PERQ-------------KL-LNLKYKGK-----TAADN-
+-------VKISALELKPNFKLMMVGST-----------------------------------------------------
+---------------------------
+>1V5TA 1V5TA
+------------------------------------------------------LPIIV---------KW-G---GQEYS
+VTTLS--EDD-----TVLDLKQ-FLKT--LTGV---L----PERQ-------------KL-LGLKVKGK-----PAEND-
+-------VKLGALKLKPNTKIMMMGTRE-S--------------------------------------------------
+---------------------------
+>2M17A 2M17A
+----------------------------------------------------MALPIIV---------KW-G---GQEYS
+VTTLS--EDD-----TVLDLKQ-FLKT--LTGV---L----PERQ-------------KL-LGLKVKGK-----PAEND-
+-------VKLGALKLKPNTKIMMMGTREES--------------------------------------------------
+---------------------------
+>2LGDA 2LGDA
+----------------------------------------------------MALPIIV---------KW-G---GQEYS
+VTTLS--EDD-----TVLDLKQ-FLKT--LTGV---L----PERQ-------------KL-LGLKVKGK-----PAEND-
+-------VKLGALKLKPNTKIMMMGTREES--------------------------------------------------
+---------------------------
+>2KX3A 2KX3A
+----------------------------------------------------MALPMIV---------KW-G---GQEYS
+VTTLS--EDD-----TVLDLKQ-FLKT--LTGV---L----PERQ-------------KL-LGLKVKGK-----PAEND-
+-------VKLGALKLKPNTKIMMMGTREES--------------------------------------------------
+---------------------------
+>3M62B 3M62B
+-----------------------------------------------------MVSLTF--------KNF-K---KEKVP
+LD-LE--PSN-----TILETKT-KLAQ--SIS---CE----ESQI-------------KL-I---YSGK-----VLQDS-
+-------KTVSECGLKDGDQVVFMVSQKKSTKTKVTERDPNSSSVDKLAAA-----------------------------
+---------------------------
+>4A20A 4A20A
+-----------------------------------------------DKMDNAAVHLTL--------KKI-Q---APKFS
+IE-HDFSPSD-----TILQIKQHLISE--EKAS---H----ISEI-------------KL-L---LKGK-----VLHDN-
+-------LFLSDLKVTPANSTITVMIKPN-P-------------------------------------------------
+---------------------------
+>3ZDMC 3ZDMC
+---------------------------------------------------NAAVHLTL--------KKI-Q---APKFS
+IE-HDFSPSD-----TILQIKQHLISE--EKAS---H----ISEI-------------KL-L---LKGK-----VLHDN-
+-------LFLSDLKVTPANSTITVMIKPN---------------------------------------------------
+---------------------------
+>4ASWC 4ASWC
+--------------------------------------------------DNAAVHLTL--------KKI-Q---APKFS
+IE-HDFSPSD-----TILQIKQHLISE--EKAS---H----ISEI-------------KL-L---LKGK-----VLHDN-
+-------LFLSDLKVTPANSTITVMIKPN-P-------------------------------------------------
+---------------------------
+>2LXCA 2LXCA
+-----------------------------------------------------MVHLTL--------KKI-Q---APKFS
+IE-HDFSPSD-----TILQIKQHLISE--EKAS---H----ISEI-------------KL-L---LKGK-----VLHDN-
+-------LFLSDLKVTPANSTITVMIKPNLE-------------------------------------------------
+---------------------------
+>2LXAA 2LXAA
+-----------------------------------------------------MVHLTL--------KKI-Q---APKFS
+IE-HDFSPSD-----TILQIKQHLISE--EKAS---H----ISEI-------------KL-L---LKGK-----VLHDN-
+-------LFLSDLKVTPANSTITVMIKPN---------------------------------------------------
+---------------------------
+>4GOCA 4GOCA
+-----------------------------------------------------SVHLTL--------KKI-Q---APKFS
+IE-HDFSPSD-----TILQIKQHLISE--EKAS---H----ISEI-------------KL-L---LKGK-----VLHDN-
+-------LFLSDLKVTPANSTITVMI------------------------------------------------------
+---------------------------
