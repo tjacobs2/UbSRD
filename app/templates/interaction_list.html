@@ -8,7 +8,8 @@ Found <%= structures.length %> total interactions.
 		<th>PDB Code</th>
 		<th>PDB Information</th>
 		<th>Ubiquitin interface type</th>
-		<th>Ubiquitin molecule type</th>
+		<th>Ubiquitin molecule type 1</th>
+		<th>Ubiquitin molecule type 2</th>
 		<th>Ubiquitin chain</th>
 		<th>Ubiquitin residue</th>
 		<th>Ubiquitin amino acid</th>
@@ -27,7 +28,8 @@ Found <%= structures.length %> total interactions.
 	    	<td><%= structure.get('pdb_code') %></td>
 		    <td><%= structure.get('pdb_info') %></td>
 	    	<td><%= structure.get('inter_type') %></td>
-	    	<td><%= structure.get('ubl_type') %></td>
+	    	<td><%= structure.get('ubl_type1') %></td>
+	    	<td><%= structure.get('ubl_type2') %></td>
 	    	<td><%= structure.get('ubq_chain') %></td>
 	    	<td><%= structure.get('ubq_res') %></td>
 	    	<td><%= structure.get('ubq_name3') %></td>

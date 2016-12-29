@@ -47,9 +47,8 @@ exports.get_chain_types = function(callback) {
 exports.get_structures = function(options, callback) {
   var query = [
   'SELECT * FROM interaction_type i',
-  'JOIN structures s ON',
-  ' s.struct_id = i.struct_id',
-
+  'JOIN interaction_type_key ik ON',
+  ' ik.interaction_type_id = i.interaction_type_id', 
   ];
   if(options.interaction_types || options.pdb_codes || options.ubl_types || options.target_types || options.chain_types) {
     query.push('WHERE');
@@ -62,9 +61,14 @@ exports.get_structures = function(options, callback) {
     query.push('(');
     for (var i = 0, len = options.interaction_types.length; i < len; i++) {
       var inter_type = options.interaction_types[i];
-      query.push('i.ppi_id = ' + inter_type);
+      query.push('ik.inter_type1_id = ' + inter_type);
       query.push('OR');
-    }
+      query.push('ik.inter_type2_id = ' + inter_type);
+      query.push('OR');
+      query.push('ik.inter_type3_id = ' + inter_type);
+      query.push('OR');
+	
+	}
     query.pop();
     query.push(')');
   }
@@ -76,7 +80,9 @@ exports.get_structures = function(options, callback) {
     query.push('(');
     for (var i = 0, len = options.ubl_types.length; i < len; i++) {
       var ubl_type = options.ubl_types[i];
-      query.push('i.ubl_id = ' + ubl_type);
+      query.push('ik.ubl_type1_id = ' + ubl_type);
+      query.push('OR');
+      query.push('ik.ubl_type2_id = ' + ubl_type);
       query.push('OR');
     }
     query.pop();
@@ -90,7 +96,7 @@ exports.get_structures = function(options, callback) {
     query.push('(');
     for (var i = 0, len = options.target_types.length; i < len; i++) {
       var target_type = options.target_types[i];
-      query.push('i.target_id = ' + target_type);
+      query.push('ik.target_id = ' + target_type);
       query.push('OR');
 	}
     query.pop();
@@ -104,7 +110,7 @@ exports.get_structures = function(options, callback) {
     query.push('(');
     for (var i = 0, len = options.chain_types.length; i < len; i++) {
       var chain_type = options.chain_types[i];
-      query.push('i.chain_id = ' + chain_type);
+      query.push('ik.chain_id = ' + chain_type);
       query.push('OR');
 	}
     query.pop();
@@ -159,8 +165,9 @@ if (options.ubl_type == 1) {
 "SELECT ",
 "    uc.struct_id as struct_id, ",
 "    uc.inter_type AS inter_type, ",
-"    it.ubl_type AS ubl_type, ",
-"    it.pdb_code AS pdb_code,",
+"    it.ubl_type1 AS ubl_type1, ",
+"    it.ubl_type2 AS ubl_type2, ",
+"    it.pdb_code AS pdb_code, ",
 "    uc.chain_letter AS ubq_chain, ",
 "    rpi1.pdb_residue_number AS partner_res, ",
 "    rpi1.chain_id AS partner_chain, ",
@@ -259,13 +266,14 @@ else if (options.ubl_type == 2) {
 "SELECT ",
 "    uc.struct_id as struct_id, ",
 "    uc.inter_type AS inter_type, ",
-"    it.ubl_type AS ubl_type, ",
+"    it.ubl_type1 AS ubl_type1, ",
+"    it.ubl_type2 AS ubl_type2, ",
 "    it.pdb_code AS pdb_code,",
 "    uc.chain_letter AS ubq_chain, ",
 "    rpi1.pdb_residue_number AS partner_res, ",
 "    rpi1.chain_id AS partner_chain, ",
 "    rpi1.real_pdb_numbering AS real_partner_num, ",   
-"    rpi2.real_pdb_numbering AS real_ubq_num, ",
+"    rpi2.real_pdb_numbering AS real_sumo_num, ",
 "    r1.name3 AS partner_name3, ",
 "    un.real AS ubq_res, ",
 "    rpi2.chain_id AS ubq_chain, ",
@@ -275,7 +283,7 @@ else if (options.ubl_type == 2) {
 "    cjt.target_type AS cj_tar, ", 
 "	 dbt.dub_class AS db_class, ",
 "    dbt.dub AS db_tar",
-"    rpi2.real_pdb_numbering AS real_ubq_num, ",
+"",
 "FROM sumo_chains uc ",
 "",
 "JOIN residue_pdb_identification rpi1 ON",

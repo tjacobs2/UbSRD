@@ -7,8 +7,11 @@ Found <%= structures.length %> total structures.
 			<th style="display: hidden">Structure ID</th>
 			<th data-field="pdb" data-sortable="true">PDB Code</th>
 			<th data-sortable="true">PDB Information</th>
-			<th data-sortable="true">Ubiquitin interface type</th>
-			<th data-sortable="true">Ubiquitin molecule type</th>
+			<th data-sortable="true">Ubiquitin interface type 1</th>
+			<th data-sortable="true">Ubiquitin interface type 2</th>	
+			<th data-sortable="true">Ubiquitin interface type 3</th>
+			<th data-sortable="true">Ubiquitin molecule type 1</th>	
+			<th data-sortable="true">Ubiquitin molecule type 2</th>
 			<th data-sortable="true">Partner type</th>
 			<th data-sortable="true">Chain type</th>
 		</tr>
@@ -19,8 +22,11 @@ Found <%= structures.length %> total structures.
 	    	<td style="display: hidden"><%= structure.get('struct_id') %></td>
 	    	<td><%= structure.get('pdb_code') %></td>
 	    	<td><%= structure.get('pdb_info') %></td>
-	    	<td><%= structure.get('inter_type') %></td>
-	    	<td><%= structure.get('ubl_type') %></td>
+			<td><%= structure.get('inter_type1') %></td>
+			<td><%= structure.get('inter_type2') %></td>
+			<td><%= structure.get('inter_type3') %></td>
+			<td><%= structure.get('ubl_type1') %></td>
+			<td><%= structure.get('ubl_type2') %></td>
 			<td><%= structure.get('target_type') %></td>
 			<td><%= structure.get('chain_type') %></td>
 		</tr>
